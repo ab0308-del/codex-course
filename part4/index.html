@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex Part 4 — 跨 Agent Handoff</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="home-link" href="../index.html">🏠 課程首頁</a>
+<div class="slides-wrapper" id="wrap">
+
+<section class="slide bg ov" style="background:url('images/cover.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">Codex Part 4</p>
+    <h1 style="font-size:46px;font-weight:900;line-height:1.25;margin-top:16px">跨 Agent Handoff<br>Codex ↔ AntiGravity</h1>
+    <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">讓兩個 AI 接力完成同一件事</p>
+    <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
+  </div>
+</section>
+
+<section class="slide" style="flex-direction:column;text-align:center">
+  <div class="card">
+    <p class="sub" style="margin-bottom:16px">為什麼要交接</p>
+    <h2 style="font-size:32px;font-weight:900;color:var(--accent-1);line-height:1.5">額度用完換手、<br>或讓<span style="color:var(--accent-3)">不同強項的 Agent</span>分工</h2>
+    <div class="deco-line" style="margin:20px auto"></div>
+    <p class="sub">這就是 AI Agent 時代的協作方式</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">HOW IT WORKS</p>
+    <h2 class="h-title">交接的原理</h2>
+    <div class="deco-line"></div>
+    <ul class="steps">
+      <li><span class="num">1</span><div class="tx"><b>同一個專案資料夾</b>：兩個 Agent 共用同一份工作區。</div></li>
+      <li><span class="num">2</span><div class="tx"><b>共用藍圖</b>：<code>agents.md</code>（Codex）／<code>CLAUDE.md</code>（Claude Code）。</div></li>
+      <li><span class="num">3</span><div class="tx"><b>交接檔</b> <code>handoff.md</code>：記錄做到哪、待辦、注意事項。</div></li>
+      <li><span class="num">4</span><div class="tx">注意：<b>不要兩個同時寫</b>同一檔案，輪流接力。</div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">HANDS-ON</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">練習交接</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">寫交接檔 → 換手接力</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">STEP A — 交棒</p>
+    <h2 class="h-title">請 Codex 寫交接檔</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">Codex 做到一半（或快沒額度）時，對它說：<span class="code">幫我寫一個交接檔 handoff.md，
+寫清楚目前做到哪、待辦、注意事項，
+等一下換 AntiGravity 接手。</span></div></li>
+      <li><span class="num">2</span><div class="tx">它會把進度寫進 <code>handoff.md</code> 與 <code>agents.md</code>。</div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">STEP B — 接棒</p>
+    <h2 class="h-title">換 AntiGravity 接手</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">開 AntiGravity，<b>Add Folder 選同一個資料夾</b>。</div></li>
+      <li><span class="num">2</span><div class="tx">對它說：<span class="code">上一個 Agent 已留下交接檔，
+請讀 handoff.md 與 agents.md，接著往下做。</span></div></li>
+      <li><span class="num">3</span><div class="tx">它讀完就知道進度，接力完成。<b>反過來也行</b>（AntiGravity → Codex）。</div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">REAL EXAMPLE</p>
+    <h2 class="h-title">真實範例：你已經做過了</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>📄 聲音克隆 Handoff</h4><p>家用電腦寫好 <code>HANDOFF_聲音克隆_給AntiGravity.md</code>，放進雲端同步的 vault。</p></div>
+      <div class="box"><h4>🏫 到學校接手</h4><p>學校電腦的 AntiGravity 讀它 → 從 Step 0 clone repo 開始往下裝。</p></div>
+    </div>
+    <div class="note">同一份交接檔，跨電腦、跨 Agent 都能接力——這就是 Handoff 的威力。</div>
+  </div>
+</section>
+
+<section class="slide bg ov-deep" style="background:url('images/ending.png') center/cover">
+  <div class="inner">
+    <p style="font-family:'Playfair Display';font-size:56px;margin-bottom:10px">系列完成 🎉</p>
+    <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
+    <p style="font-size:20px;opacity:.92">環境 → Computer Use → Canva → Handoff，你掌握了 Codex 的核心</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px"><a href="../index.html" style="color:#9be3bd">回課程首頁</a></p>
+  </div>
+</section>
+
+</div>
+<div class="progress-bar" id="bar"></div>
+<div class="slide-counter" id="counter">1 / 8</div>
+<div class="nav-hint">← → 換頁，或點畫面前進</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const bar=document.getElementById('bar'),counter=document.getElementById('counter');
+let cur=0;
+function show(n){cur=Math.max(0,Math.min(n,slides.length-1));
+  slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.classList.toggle('prev',i<cur);});
+  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;}
+show(0);
+document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();show(cur-1);}});
+document.getElementById('wrap').addEventListener('click',e=>{if(e.target.closest('a'))return;show(cur+1);});
+</script>
+</body>
+</html>

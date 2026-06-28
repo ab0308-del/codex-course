@@ -1,0 +1,49 @@
+/* AI Agent 基本功 · AntiGravity 課程 — 共用簡報樣式（教育感暖色風） */
+:root{
+  --bg-primary:#FAFAF7; --bg-slide:#FFFFFF;
+  --accent-1:#2D6A4F; --accent-2:#52B788; --accent-3:#F4A261; --accent-4:#E9C46A;
+  --text-primary:#1A1A2E; --text-secondary:#5C6B73; --border-light:#E8F4F0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans TC',sans-serif;background:#000;overflow:hidden;height:100vh;width:100vw}
+.slides-wrapper{width:100%;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateX(60px);transition:all .5s cubic-bezier(.4,0,.2,1);pointer-events:none;padding:48px 72px;background:var(--bg-primary)}
+.slide.active{opacity:1;transform:translateX(0);pointer-events:all}
+.slide.prev{opacity:0;transform:translateX(-60px)}
+.progress-bar{position:fixed;bottom:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent-1),var(--accent-3));transition:width .4s ease;z-index:100}
+.slide-counter{position:fixed;bottom:16px;right:26px;font-size:13px;color:#fff;mix-blend-mode:difference;z-index:100;letter-spacing:.05em}
+.nav-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-size:12px;color:#fff;mix-blend-mode:difference;opacity:.7;z-index:100}
+.home-link{position:fixed;top:16px;left:20px;z-index:120;font-size:13px;color:#fff;mix-blend-mode:difference;text-decoration:none;opacity:.85;font-weight:700}
+.home-link:hover{opacity:1}
+.deco-line{width:64px;height:4px;background:var(--accent-3);border-radius:2px;margin:16px 0}
+.eyebrow{font-family:'Playfair Display';letter-spacing:.28em;font-size:13px;opacity:.85;text-transform:uppercase}
+.bg{color:#fff;flex-direction:column;text-align:center}
+.bg .inner{position:relative;z-index:2;max-width:980px}
+.bg::after{content:'';position:absolute;inset:0;z-index:1}
+/* 底圖以 inline style 設定（相對各 part 的 HTML），此處只負責深色覆蓋層讓白字可讀 */
+.bg.ov::after{background:linear-gradient(120deg,rgba(26,58,42,.82),rgba(45,106,79,.55))}
+.bg.ov-deep::after{background:linear-gradient(120deg,rgba(26,58,42,.86),rgba(45,106,79,.62))}
+.sec-num{font-family:'Playfair Display';font-size:120px;font-weight:700;opacity:.16;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1}
+.wrap{width:100%;max-width:960px}
+.h-eyebrow{color:var(--accent-2);font-size:13px;letter-spacing:.2em;margin-bottom:8px}
+.h-title{font-size:38px;font-weight:900;color:var(--accent-1);line-height:1.2}
+.sub{color:var(--text-secondary);font-size:16px;margin-top:6px}
+.steps{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:14px}
+.steps li{display:flex;align-items:flex-start;gap:16px}
+.num{width:34px;height:34px;background:var(--accent-1);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:15px}
+.steps .tx{font-size:18px;line-height:1.55;color:var(--text-primary);padding-top:3px}
+.steps .tx b{color:var(--accent-1)}
+code,.code{font-family:'JetBrains Mono',monospace}
+.code{display:block;background:#173a2c;color:#d8f3e3;padding:12px 16px;border-radius:10px;font-size:15px;margin-top:8px;word-break:break-all;white-space:pre-wrap;line-height:1.5}
+.code .c{color:#8fd9b6}
+.pill{display:inline-block;font-size:13px;padding:3px 12px;border-radius:999px;background:var(--border-light);color:var(--accent-1);margin:3px 6px 3px 0;font-weight:700}
+.note{background:#FFF7EC;border-left:4px solid var(--accent-3);padding:10px 16px;border-radius:8px;color:#7a5b2e;font-size:15px;margin-top:14px}
+.card{background:#fff;border-radius:22px;padding:48px 60px;box-shadow:0 20px 60px rgba(0,0,0,.07);max-width:820px;width:100%;text-align:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.box{background:#F0FAF5;border:1px solid var(--border-light);border-radius:14px;padding:18px 20px}
+.box h4{color:var(--accent-1);font-size:18px;margin-bottom:6px}
+.box p{font-size:15px;color:var(--text-primary);line-height:1.5}
+.repo{background:#173a2c;color:#eafff4;border-radius:18px;padding:20px 24px;margin-top:16px}
+.repo a{color:#9be3bd;font-weight:700;word-break:break-all}
+@media(max-width:760px){.slide{padding:32px 22px}.h-title{font-size:26px}.grid2{grid-template-columns:1fr}.sec-num{font-size:70px}.card{padding:30px 24px}}

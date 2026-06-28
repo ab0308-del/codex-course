@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent 基本功 · OpenAI Codex 課程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--accent-1:#2D6A4F;--accent-2:#52B788;--accent-3:#F4A261;--accent-4:#E9C46A;
+  --text:#1A1A2E;--muted:#5C6B73;--line:#E8F4F0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none}
+.eyebrow{font-family:'Playfair Display';letter-spacing:.28em;text-transform:uppercase;font-size:13px}
+.hero{min-height:62vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  color:#fff;padding:80px 24px;position:relative;background:url('part1/images/cover.png') center/cover}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(26,58,42,.85),rgba(45,106,79,.6))}
+.hero>*{position:relative;z-index:2}
+.hero .eyebrow{opacity:.85;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,5vw,54px);font-weight:900;line-height:1.25;max-width:900px}
+.hero .line{width:70px;height:4px;background:var(--accent-4);border-radius:2px;margin:22px auto}
+.hero p{font-size:18px;opacity:.92;max-width:680px}
+.hero .by{font-size:15px;opacity:.78;margin-top:10px}
+section.block{max-width:1080px;margin:0 auto;padding:64px 24px}
+.sec-eyebrow{color:var(--accent-2);letter-spacing:.2em;font-size:13px;margin-bottom:8px}
+.sec-title{font-size:30px;font-weight:900;color:var(--accent-1)}
+.dline{width:60px;height:4px;background:var(--accent-3);border-radius:2px;margin:14px 0 28px}
+.teacher{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;background:#F0FAF5;border:1px solid var(--line);border-radius:20px;padding:32px}
+.teacher img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:5px solid var(--accent-2);box-shadow:0 10px 30px rgba(45,106,79,.2)}
+.teacher h3{font-size:24px;color:var(--accent-1);font-weight:900}
+.teacher .role{color:var(--accent-3);font-weight:700;margin-bottom:10px}
+.teacher ul{list-style:none;font-size:15px;color:var(--text);line-height:1.9}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(45,106,79,.18)}
+.pcard .thumb{height:140px;background-size:cover;background-position:center;position:relative}
+.pcard .thumb span{position:absolute;left:14px;bottom:12px;background:var(--accent-1);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px}
+.pcard .body{padding:18px 20px;display:flex;flex-direction:column;flex:1}
+.pcard h4{font-size:19px;color:var(--accent-1);font-weight:900;margin-bottom:6px}
+.pcard p{font-size:14.5px;color:var(--muted);flex:1}
+.pcard .go{margin-top:14px;align-self:flex-start;background:var(--accent-1);color:#fff;font-weight:700;font-size:14px;padding:8px 18px;border-radius:999px}
+.pcard:hover .go{background:var(--accent-2)}
+.chk{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.chk li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:16px}
+.chk .b{width:22px;height:22px;border:2px solid var(--accent-2);border-radius:6px;flex-shrink:0;margin-top:3px}
+.cross{background:#F0FAF5;border:1px solid var(--line);border-radius:16px;padding:24px 28px;font-size:16px}
+.cross a{color:var(--accent-1);font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:40px 24px;border-top:1px solid var(--line)}
+@media(max-width:680px){.teacher{grid-template-columns:1fr;text-align:center;justify-items:center}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <p class="eyebrow">AI Agent 基本功 · OpenAI Codex</p>
+  <h1>用最強的 Agent 幫你做事<br>Codex 四堂課</h1>
+  <div class="line"></div>
+  <p>給教師與 AI Agent 新手：環境佈置、操控電腦、嫁接 Canva、跨 Agent 接力。</p>
+  <p class="by">新北市大豐國小　·　許凱琳老師</p>
+</div>
+
+<section class="block">
+  <p class="sec-eyebrow">ABOUT</p>
+  <h2 class="sec-title">關於這套課程</h2>
+  <div class="dline"></div>
+  <div class="teacher">
+    <div style="text-align:center"><img src="teacher.png" alt="許凱琳老師"></div>
+    <div>
+      <h3>許凱琳 老師</h3>
+      <p class="role">新北市大豐國小　自然教師</p>
+      <ul>
+        <li>▸ 115 年新北市特殊優良教師．112 年新北市 Super 師獎</li>
+        <li>▸ 教育部 A1／B3／B5-1 生成式 AI 工作坊合格講師．Gemini 認證講師</li>
+        <li>▸ ViewSonic 創新教師獎 TOP 10．Apple Learning Coach／APLS</li>
+        <li>▸ 2019–2026 iPad 種子教師</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <p class="sec-eyebrow">CURRICULUM</p>
+  <h2 class="sec-title">四個 Part，點進去就能上</h2>
+  <div class="dline"></div>
+  <div class="parts">
+    <a class="pcard" href="part1/index.html">
+      <div class="thumb" style="background-image:url('part1/images/cover.png')"><span>Part 1</span></div>
+      <div class="body"><h4>環境佈置與第一次動手</h4><p>下載、用 ChatGPT 帳號登入（資料連動）、外掛程式、agents.md 起手式。</p><span class="go">進入 →</span></div>
+    </a>
+    <a class="pcard" href="part2/index.html">
+      <div class="thumb" style="background-image:url('part2/images/cover.png')"><span>Part 2</span></div>
+      <div class="body"><h4>Computer Use 操控電腦</h4><p>Codex 招牌：下載考古題、文件資料填報、整理檔案、操作桌面 App。</p><span class="go">進入 →</span></div>
+    </a>
+    <a class="pcard" href="part3/index.html">
+      <div class="thumb" style="background-image:url('part3/images/cover.png')"><span>Part 3</span></div>
+      <div class="body"><h4>嫁接 Canva</h4><p>外掛程式接上 Canva，一句話做海報、簡報、教學素材。</p><span class="go">進入 →</span></div>
+    </a>
+    <a class="pcard" href="part4/index.html">
+      <div class="thumb" style="background-image:url('part4/images/cover.png')"><span>Part 4</span></div>
+      <div class="body"><h4>跨 Agent Handoff</h4><p>Codex ↔ AntiGravity 用 handoff.md 同資料夾接力交接。</p><span class="go">進入 →</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="block">
+  <p class="sec-eyebrow">BEFORE YOU START</p>
+  <h2 class="sec-title">課前準備清單</h2>
+  <div class="dline"></div>
+  <ul class="chk">
+    <li><span class="b"></span><div>OpenAI／ChatGPT <b>付費帳號</b>（Codex 需訂閱，$20 起）</div></li>
+    <li><span class="b"></span><div>Canva 帳號</div></li>
+    <li><span class="b"></span><div>已下載安裝 Obsidian（第二大腦，跨工具通用）</div></li>
+    <li><span class="b"></span><div>GitHub 帳號</div></li>
+    <li><span class="b"></span><div>筆電可安裝軟體、網路正常、帶耳機</div></li>
+  </ul>
+</section>
+
+<section class="block">
+  <div class="cross">
+    🔗 還沒上過 AntiGravity？建議搭配姊妹課程 —
+    <a href="https://ab0308-del.github.io/antigravity-course/" target="_blank">AntiGravity 入門課程</a>。
+    兩套課程的使用邏輯相通，Part 4 的 Handoff 正是讓 Codex 與 AntiGravity 接力協作。
+  </div>
+</section>
+
+<footer>
+  AI Agent 基本功 · OpenAI Codex 課程　·　新北市大豐國小 許凱琳老師<br>
+  課程設計參考三師爸 <a href="https://www.youtube.com/@sensebar" target="_blank" style="color:var(--accent-1)">@sensebar</a> 系列　·　🤖 Built with Claude Code
+</footer>
+
+</body>
+</html>
