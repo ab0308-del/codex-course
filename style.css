@@ -46,4 +46,15 @@ code,.code{font-family:'JetBrains Mono',monospace}
 .box p{font-size:15px;color:var(--text-primary);line-height:1.5}
 .repo{background:#173a2c;color:#eafff4;border-radius:18px;padding:20px 24px;margin-top:16px}
 .repo a{color:#9be3bd;font-weight:700;word-break:break-all}
-@media(max-width:760px){.slide{padding:32px 22px}.h-title{font-size:26px}.grid2{grid-template-columns:1fr}.sec-num{font-size:70px}.card{padding:30px 24px}}
+.guide-shot{margin:18px auto 0;text-align:center}
+.guide-shot a{display:inline-block;max-width:100%}
+.guide-shot img{display:block;max-width:100%;max-height:58vh;margin:auto;border:1px solid #dfe8e3;border-radius:14px;box-shadow:0 14px 34px rgba(26,58,42,.12);background:#fff;object-fit:contain}
+.guide-shot figcaption{color:var(--text-secondary);font-size:14px;margin-top:8px}
+.shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;margin-top:16px}
+.shot-grid .guide-shot{margin-top:0}
+.shot-grid .guide-shot img{max-height:53vh}
+.stack-shots{display:grid;gap:14px;margin-top:14px}
+.stack-shots .guide-shot{margin-top:0}
+.stack-shots .wide-shot img{max-height:12vh}
+.stack-shots .main-shot img{max-height:45vh}
+@media(max-width:760px){.slide{padding:32px 22px}.h-title{font-size:26px}.grid2,.shot-grid{grid-template-columns:1fr}.sec-num{font-size:70px}.card{padding:30px 24px}.shot-grid .guide-shot img{max-height:34vh}.guide-shot figcaption{font-size:12px}}
