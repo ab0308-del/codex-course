@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex Part 3 — 外掛程式：擴充 Codex</title>
+<title>Codex Part 3 — Padlet MCP：打造 AI 研習助教</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,79 +14,83 @@
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
     <p class="eyebrow">Codex Part 3</p>
-    <h1 style="font-size:48px;font-weight:900;line-height:1.25;margin-top:16px">外掛程式<br>擴充 Codex</h1>
+    <h1 style="font-size:48px;font-weight:900;line-height:1.25;margin-top:16px">Padlet MCP<br>打造 AI 研習助教</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">在你喜愛的工具中協作</p>
+    <p style="font-size:18px;opacity:.9">建立互動牆、整理回應、草擬個別回饋</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">@ 外掛程式</p>
-    <h2 class="h-title">一個面板，接上各種工具</h2>
+    <p class="h-eyebrow">CONNECT</p>
+    <h2 class="h-title">MCP：AI 與外部工具的標準插頭</h2>
     <div class="deco-line"></div>
-    <p class="sub" style="margin-bottom:8px">左側「外掛程式」搜尋 → 新增 → 授權。內建官方核心能力：</p>
+    <p class="sub" style="margin-bottom:8px">不同擴充方式負責不同層次；今天用 Padlet MCP 完成一條講師工作流：</p>
     <div class="grid2">
-      <div class="box"><h4>🖱️ Computer Use</h4><p>操控你的電腦。</p></div>
-      <div class="box"><h4>🌐 Chrome / Browser</h4><p>操控瀏覽器。</p></div>
-      <div class="box"><h4>🎨 Canva</h4><p>做設計、簡報。</p></div>
-      <div class="box"><h4>📊 Spreadsheets / Presentations</h4><p>表格與簡報處理。</p></div>
+      <div class="box"><h4>📦 Plugin</h4><p>可安裝的一整組能力與工作流程。</p></div>
+      <div class="box"><h4>🧭 Skill</h4><p>教 AI 一套可重複使用的 SOP。</p></div>
+      <div class="box"><h4>🔌 MCP／Connector</h4><p>連接即時外部資料與可執行動作。</p></div>
+      <div class="box"><h4>⏰ Automation</h4><p>在指定時間重複執行已穩定的流程。</p></div>
     </div>
-    <div class="note">還有 Gmail、GitHub、遊戲開發等大量插件，可在市場搜尋安裝。</div>
+    <div class="note">今天的成果：Codex 連接 Padlet，成為研習前、中、後都能使用的 AI 助教。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PLUGIN ①</p>
-    <h2 class="h-title">Computer Use：操控整台電腦</h2>
+    <p class="h-eyebrow">SETUP</p>
+    <h2 class="h-title">安裝 Padlet MCP，先確認連線</h2>
     <div class="deco-line"></div>
     <ul class="steps">
-      <li><span class="num">1</span><div class="tx">AI 能<b>看你的螢幕</b>、移動滑鼠、點擊、打字。</div></li>
-      <li><span class="num">2</span><div class="tx">操作 <b>Word、PowerPoint</b> 等任何桌面應用程式。</div></li>
-      <li><span class="num">3</span><div class="tx">教學雜事：下載考古題、填表單、整理檔案——一句話交辦。</div></li>
+      <li><span class="num">1</span><div class="tx">Padlet 付費帳號到「設定 → Developer」產生 API Key；金鑰不得貼在對話或投影畫面。</div></li>
+      <li><span class="num">2</span><div class="tx">終端機執行 <code>npx -y padlet-mcp setup</code>，在本機安裝精靈輸入金鑰，完成後重啟 Codex。</div></li>
+      <li><span class="num">3</span><div class="tx">輸入：「<b>用 Padlet 的 whoami 確認連線，只讀取資料。</b>」看到自己的帳號即成功。</div></li>
     </ul>
+    <div class="note">沒有 API Key 的學員使用講師示範牆參與，不讓帳號方案阻斷學習。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PLUGIN ②</p>
-    <h2 class="h-title">Browser / Chrome：操控瀏覽器</h2>
+    <p class="h-eyebrow">TASK ①</p>
+    <h2 class="h-title">一句話建立研習互動牆</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx"><b>Browser Use</b>：讓 AI 真正去自動點擊、填表單、翻頁（設定 → 瀏覽器 → 開啟）。</div></li>
-      <li><span class="num">2</span><div class="tx"><b>Chrome 外掛</b>：在 Chrome 裝 Codex 擴充，抓網頁資訊彙整成表格。</div></li>
-      <li><span class="num">3</span><div class="tx">範例：「取得某網站最新 5 篇貼文，彙整成表格。」</div></li>
+      <li><span class="num">1</span><div class="tx">指定對象、主題、區段與每區引導問題。</div></li>
+      <li><span class="num">2</span><div class="tx">要求 Codex 先在對話中預覽版面結構，確認後才建立。</div></li>
+      <li><span class="num">3</span><div class="tx">建立後回到 Padlet，手動檢查分享權限，並視需要開啟留言與 reactions。</div></li>
     </ol>
+    <span class="code">請規劃一面「AI Agent 教師研習」Padlet，分成：
+課前期待、今天學到什麼、可以應用在哪裡、仍然想問的問題。
+每區放 2 個簡短引導問題。先預覽內容，等我確認後再建立。</span>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PLUGIN ③</p>
-    <h2 class="h-title">Canva 與 GitHub</h2>
+    <p class="h-eyebrow">TASK ②</p>
+    <h2 class="h-title">讀取全班回應，先摘要、不回寫</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>🎨 Canva</h4><p>外掛程式接上 Canva → 一句話做海報、簡報、學習單封面、活動視覺。</p></div>
-      <div class="box"><h4>🚀 GitHub</h4><p>把做好的網頁推上 GitHub，用 GitHub Pages 免費發佈成網站，別人都能訪問。</p></div>
+      <div class="box"><h4>📊 分類統整</h4><p>將回應整理為「已理解、想應用、仍有疑問」，統計數量與常見觀點。</p></div>
+      <div class="box"><h4>🔎 保留例外</h4><p>不確定、離題、可能涉及個資的內容另外列出，不替學員猜測。</p></div>
     </div>
-    <div class="note">Gmail 外掛：請 Codex 幫你「寫一封信並寄出」。</div>
+    <div class="note">提示詞：「先在對話中提供摘要，不要直接貼回 Padlet。」讀取與外部寫入是兩個不同授權階段。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">TASK 3</p>
-    <h2 class="h-title">實戰：做個人電子名片網站</h2>
+    <p class="h-eyebrow">TASK ③</p>
+    <h2 class="h-title">個別回饋：預覽、確認、再留言</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx"><b>工作模式切換</b>到「適用於程式設計」，回覆更專業。</div></li>
-      <li><span class="num">2</span><div class="tx">建專案夾 <code>namecard</code>，模型選 <b>GPT-5.5</b>、智慧「高」。</div></li>
-      <li><span class="num">3</span><div class="tx">點對話框左下 <b>+ → 計畫模式</b>：先規劃再動手。</div></li>
-      <li><span class="num">4</span><div class="tx">給資訊（姓名/職業/簡介/聯絡）+ 要求（生頭像、多風格、響應式、蘋果簡潔風）。</div></li>
-      <li><span class="num">5</span><div class="tx"><b>批註修改</b>：右側內建瀏覽器 → 批註 → 點頁面元素寫意見 → 送出。</div></li>
+      <li><span class="num">1</span><div class="tx">請 Codex 為每則回應<b>草擬</b>一句具體、友善、能引導思考的回饋。</div></li>
+      <li><span class="num">2</span><div class="tx">講師逐則檢查語氣、正確性與是否洩漏個資。</div></li>
+      <li><span class="num">3</span><div class="tx">只把確認過的回饋留言到對應貼文；無法配對就停止詢問。</div></li>
+      <li><span class="num">4</span><div class="tx">可延伸：答對加 ❤️、迷思用蘇格拉底式問題回應，但先確認 Padlet 已開啟互動。</div></li>
+      <li><span class="num">5</span><div class="tx">最後產出研習摘要：主要收穫、待解問題、後續行動與人工處理清單。</div></li>
     </ol>
   </div>
 </section>
@@ -95,8 +99,8 @@
   <div class="inner">
     <p style="font-family:'Playfair Display';font-size:60px;margin-bottom:10px">謝謝</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">接上工具，Codex 無所不能</p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：Skill、MCP、自動化與跨 Agent</p>
+    <p style="font-size:20px;opacity:.92">Padlet 收回應，Codex 幫講師看見全班</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：Skill、自動化與工作接力</p>
   </div>
 </section>
 
