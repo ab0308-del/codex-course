@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex Part 1 — 安裝與基礎設定</title>
+<title>Codex Part 1 — 環境設置與 Agent 工作法</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,79 +14,79 @@
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
     <p class="eyebrow">Codex Part 1</p>
-    <h1 style="font-size:50px;font-weight:900;line-height:1.25;margin-top:16px">安裝與基礎設定</h1>
+    <h1 style="font-size:50px;font-weight:900;line-height:1.25;margin-top:16px">環境設置與 Agent 工作法</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">最強的 Agent，從這裡開始</p>
+    <p style="font-size:18px;opacity:.9">先設好安全範圍，再把工作交出去</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">WHY CODEX</p>
-    <h2 class="h-title">為什麼學 Codex</h2>
+    <p class="h-eyebrow">AI AGENT</p>
+    <h2 class="h-title">回答問題，和實際執行不一樣</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>🖱️ Computer Use 最強</h4><p>看你的螢幕、移動滑鼠、打字，操作 Word／PPT 等任何桌面程式。</p></div>
-      <div class="box"><h4>🔌 外掛程式串接萬物</h4><p>Canva、Chrome、Gmail、GitHub… 一鍵接上。</p></div>
-      <div class="box"><h4>🔗 跟 ChatGPT 連動</h4><p>同一個 OpenAI 帳號，聊天與專案資料互通。</p></div>
-      <div class="box"><h4>🐢 缺點：慢</h4><p>派工後去忙別的，跑完它會回報。</p></div>
+      <div class="box"><h4>💬 ChatGPT</h4><p>適合問答、整理、寫作與構思。</p></div>
+      <div class="box"><h4>🧰 Codex</h4><p>在授權範圍內讀寫檔案、使用工具並交付成果。</p></div>
+      <div class="box"><h4>🖱️ Computer Use</h4><p>操作已授權的桌面應用程式；仍可能受權限與介面變動影響。</p></div>
+      <div class="box"><h4>🔌 外部連接</h4><p>透過 Plugin、App Connector 或 MCP 連接 Padlet、Canva、GitHub 等服務。</p></div>
     </div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PART 1 — (a)</p>
-    <h2 class="h-title">下載與登入</h2>
+    <p class="h-eyebrow">SETUP ①</p>
+    <h2 class="h-title">下載、登入與建立練習工作區</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx">到官網下載安裝：<span class="code">https://openai.com/zh-Hant/codex/</span><span class="pill">Windows 太舊裝不起來 → 先更新</span></div></li>
-      <li><span class="num">2</span><div class="tx">登入方式三選一：<b>用 ChatGPT 繼續</b>（免費額度少）／<b>訂閱 Plus 690 元</b>（推薦）／<b>API Key</b>（另外付費、更貴）。</div></li>
+      <li><span class="num">1</span><div class="tx">到 OpenAI 官方網站下載安裝 Codex，登入自己的帳號。<span class="pill">方案、模型與額度會更新，以當天帳號畫面為準</span></div></li>
+      <li><span class="num">2</span><div class="tx">在「文件」建立<b>獨立練習資料夾</b>，只放假資料與可備份的檔案。</div></li>
+      <li><span class="num">3</span><div class="tx">在 Codex 開啟該資料夾；工作區就是 Agent 這次可以工作的主要範圍。</div></li>
     </ol>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PART 1 — (b)</p>
-    <h2 class="h-title">自定義指令：全域長期記憶</h2>
+    <p class="h-eyebrow">SETUP ②</p>
+    <h2 class="h-title">選擇權限：初學者先守住工作區</h2>
     <div class="deco-line"></div>
-    <p class="sub" style="margin-bottom:6px">設定 → 個人化 → 自定義指令。每個對話都會先參考，不必每次重講。範例：</p>
-    <span class="code"># 個人身份
-我是新北市大豐國小自然老師。
-
-# 偏好回覆方式
-- 請用繁體中文回覆，中文用全形標點，英數兩側加半形空白。
-- 減少表情符號。
-- 不要用「當然可以！」這類客套話，直接切入重點。</span>
+    <div class="grid2">
+      <div class="box"><h4>預設／依請求</h4><p>在工作區內執行；超出範圍或遇到敏感操作時再詢問。</p></div>
+      <div class="box"><h4>代我核准／自動審查</h4><p>流程較順，但仍要檢查 AI 的自動判斷。</p></div>
+      <div class="box"><h4>完整存取</h4><p>自由度與風險最高，不建議初學者直接使用。</p></div>
+      <div class="box"><h4>推薦自訂</h4><p>依請求＋工作區寫入；需要查詢或下載時才允許網路。</p></div>
+    </div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PART 1 — (c)</p>
-    <h2 class="h-title">查額度 + 建立工作目錄</h2>
+    <p class="h-eyebrow">SETUP ③</p>
+    <h2 class="h-title">個人化、佇列與 Computer Use</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx"><b>查額度</b>：左下角「設定 → 剩餘額度」，看 5 小時配額、本週比例與刷新時間。<span class="pill">免費版可登 2 帳號切換</span></div></li>
-      <li><span class="num">2</span><div class="tx"><b>起手式</b>：新開專案 → 選一個<b>本機工作資料夾</b>（Agent 永遠在資料夾裡做事）。</div></li>
-      <li><span class="num">3</span><div class="tx">說「<b>這是新專案，幫我初始化</b>」→ 建立 <code>agents.md</code> 專案藍圖。</div></li>
+      <li><span class="num">1</span><div class="tx"><b>個人化</b>：選「務實」，自訂指令要求繁體中文、先講結論、不確定時明確標示。</div></li>
+      <li><span class="num">2</span><div class="tx"><b>後續訊息</b>：初學者建議使用「佇列」；需要立即改變方向時才使用引導。</div></li>
+      <li><span class="num">3</span><div class="tx"><b>Computer Use</b>：只開啟這堂需要的應用程式；登入、付款、寄送、發布、刪除前人工確認。</div></li>
     </ol>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">FIRST STEPS</p>
-    <h2 class="h-title">基礎對話：先把它當 ChatGPT 用</h2>
+    <p class="h-eyebrow">WORKFLOW</p>
+    <h2 class="h-title">全課共用：計畫 → 執行 → 驗收</h2>
     <div class="deco-line"></div>
     <ul class="steps">
-      <li><span class="num">1</span><div class="tx">「Codex，你是誰？」先打聲招呼、熟悉介面。</div></li>
-      <li><span class="num">2</span><div class="tx">「幫我查今天 AI 教育的熱點。」</div></li>
-      <li><span class="num">3</span><div class="tx">「我要做成語故事影片，寫 20 個故事名稱和腳本，中英對照。」</div></li>
-      <li><span class="num">4</span><div class="tx">熟悉之後，再進到「動手做事」——就是下一集。</div></li>
+      <li><span class="num">1</span><div class="tx"><b>先盤點</b>：只讀取資料、說明現況與風險，不修改。</div></li>
+      <li><span class="num">2</span><div class="tx"><b>再計畫</b>：列出步驟、交付成果與驗收方法，等使用者確認。</div></li>
+      <li><span class="num">3</span><div class="tx"><b>小範圍試做</b>：先處理 3 筆或建立副本，再完整執行。</div></li>
+      <li><span class="num">4</span><div class="tx"><b>實際驗收</b>：打開成果、抽查內容、核對數量與例外，不只看「已完成」。</div></li>
     </ul>
+    <div class="note">交辦公式：背景＋目標＋資料＋限制＋交付格式＋驗收標準。</div>
   </div>
 </section>
 
@@ -94,8 +94,8 @@
   <div class="inner">
     <p style="font-family:'Playfair Display';font-size:60px;margin-bottom:10px">謝謝</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">環境就緒，準備動手做任務</p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 2：整理檔案與合併列印</p>
+    <p style="font-size:20px;opacity:.92">環境就緒，會交辦，也會驗收</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 2：教師文件批次處理</p>
   </div>
 </section>
 

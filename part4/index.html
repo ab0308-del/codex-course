@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex Part 4 — Skill、MCP、自動化與跨 Agent</title>
+<title>Codex Part 4 — Skill、自動化與工作接力</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,9 +14,9 @@
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
     <p class="eyebrow">Codex Part 4</p>
-    <h1 style="font-size:42px;font-weight:900;line-height:1.3;margin-top:16px">Skill・MCP・自動化<br>與跨 Agent</h1>
+    <h1 style="font-size:42px;font-weight:900;line-height:1.3;margin-top:16px">Skill・自動化<br>與工作接力</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">讓 Codex 從會用變成超強</p>
+    <p style="font-size:18px;opacity:.9">把一次成功，變成每次都能穩定完成</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
   </div>
 </section>
@@ -24,25 +24,25 @@
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">$ SKILL</p>
-    <h2 class="h-title">Skill 技能包：把 SOP 教給 AI</h2>
+    <h2 class="h-title">Skill：把驗證過的 SOP 教給 AI</h2>
     <div class="deco-line"></div>
     <ul class="steps">
-      <li><span class="num">1</span><div class="tx">Skill＝給 AI 的<b>技能包</b>，遇到相關任務<b>按需自動載入</b>，不用每次寫一堆提示詞。</div></li>
-      <li><span class="num">2</span><div class="tx">內建 <b>Image Gen</b> 圖像生成；用 <b>skill-installer</b> 安裝別人的技能（如動畫 remotion）。</div></li>
-      <li><span class="num">3</span><div class="tx">用 <b>skill-creator</b> 把你的流程封裝成自己的技能（本質是一份 <code>SKILL.md</code>）。</div></li>
+      <li><span class="num">1</span><div class="tx">先完成一次真實任務，記錄輸入資料、步驟、限制、交付成果與驗收規則。</div></li>
+      <li><span class="num">2</span><div class="tx">用 <b>skill-creator</b> 封裝成自己的 Skill；重複任務不用每次重寫長提示詞。</div></li>
+      <li><span class="num">3</span><div class="tx">換 3 組不同資料測試；若流程仍常出錯，先修 SOP，不急著自動化。</div></li>
     </ul>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">MCP</p>
-    <h2 class="h-title">MCP：AI 的萬能插頭</h2>
+    <p class="h-eyebrow">PROJECT MEMORY</p>
+    <h2 class="h-title">AGENTS.md：專案長期工作規則</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx">MCP（Model Context Protocol）讓 AI 連接<b>外部工具與資料來源</b>、取得即時資訊。</div></li>
-      <li><span class="num">2</span><div class="tx"><b>Context7</b>：即時查最新技術文件，終端輸入 <code>npx ctx7 setup</code> 安裝。</div></li>
-      <li><span class="num">3</span><div class="tx"><b>Notion</b> 等：設定 → MCP 服務 → 新增伺服器 → 安裝後重啟 Codex。</div></li>
+      <li><span class="num">1</span><div class="tx"><code>AGENTS.md</code> 是給 Agent 的專案說明，會隨工作區持續使用，不是聊天記憶。</div></li>
+      <li><span class="num">2</span><div class="tx">寫入專案目的、資料規則、禁止事項、檔名格式、驗收方式與常用操作。</div></li>
+      <li><span class="num">3</span><div class="tx">保持短而具體；只有在反覆遇到相同問題時，才新增一條長期規則。</div></li>
     </ol>
   </div>
 </section>
@@ -50,27 +50,27 @@
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">AUTOMATE</p>
-    <h2 class="h-title">自動化 + 一次完成多件事</h2>
+    <h2 class="h-title">穩定之後，再交給自動化</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>⏰ 自動化排程</h4><p>「每週一早上 10 點，連網搜尋 AI 新工具與模型，整理成報告。」</p></div>
-      <div class="box"><h4>📦 一次多工</h4><p>一個指令同時輸出 Documents（趨勢文件）＋ Spreadsheets（表格）＋ Presentations（簡報大綱）。</p></div>
+      <div class="box"><h4>⏰ 適合自動化</h4><p>固定時間、固定來源、固定格式，而且失敗容易察覺的流程。</p></div>
+      <div class="box"><h4>🧑‍⚖️ 保留人工確認</h4><p>寄送、發布、評分、刪除、覆寫、個資與對外承諾。</p></div>
     </div>
-    <div class="note">桌面寵物還能即時顯示工作進度，跑到哪一眼看到。</div>
+    <div class="note">範例：「每週一整理 AI 教育新知成草稿，通知我檢查；不要自動寄出或公開發布。」</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">HANDOFF</p>
-    <h2 class="h-title">跨 Agent 接力：Codex ↔ AntiGravity</h2>
+    <h2 class="h-title">跨帳號、跨 Agent 都能接著做</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx">額度用完、或讓不同強項的 Agent 分工時，用<b>交接檔</b>接力。</div></li>
-      <li><span class="num">2</span><div class="tx">請 Codex：「<b>寫一個 handoff.md，記錄進度與待辦，等 AntiGravity 接手。</b>」</div></li>
-      <li><span class="num">3</span><div class="tx">開 AntiGravity，<b>選同一個資料夾</b>，說「讀 handoff.md 與 agents.md 接著做」。</div></li>
+      <li><span class="num">1</span><div class="tx"><code>AGENTS.md</code> 保存長期規則；<code>handoff.md</code> 保存本次進度、決策、問題與下一步。</div></li>
+      <li><span class="num">2</span><div class="tx">切換帳號或 Agent 前，要求它更新交接檔並列出尚未驗收的成果。</div></li>
+      <li><span class="num">3</span><div class="tx">接手者開啟同一資料夾，先讀兩份文件、盤點現況，再提出接續計畫。</div></li>
     </ol>
-    <div class="note">真實範例：你做的「聲音克隆 handoff」就是這樣，跨電腦、跨 Agent 接力完成。</div>
+    <div class="note">本機檔案可以延續，但對話歷史、記憶、額度、權限與外部服務登入不一定會轉移。</div>
   </div>
 </section>
 
@@ -78,7 +78,7 @@
   <div class="inner">
     <p style="font-family:'Playfair Display';font-size:54px;margin-bottom:10px">系列完成 🎉</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">安裝 → 任務 → 外掛 → Skill/MCP/協作，你掌握了 Codex 的核心</p>
+    <p style="font-size:20px;opacity:.92">設環境 → 安全交辦 → 批次處理 → Padlet MCP → Skill／自動化／接力</p>
     <p style="font-size:15px;opacity:.78;margin-top:12px"><a href="../index.html" style="color:#9be3bd">回課程首頁</a></p>
   </div>
 </section>
