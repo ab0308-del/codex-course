@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChatGPT AI Agent Part 4 — Work 自動化與 Codex 工作接力</title>
+<title>ChatGPT AI Agent Part 4 — Codex 小遊戲與 Netlify MCP 上架</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,91 +14,222 @@
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
     <p class="eyebrow">ChatGPT AI Agent Part 4</p>
-    <h1 style="font-size:42px;font-weight:900;line-height:1.3;margin-top:16px">Work 自動化<br>與 Codex 工作接力</h1>
+    <h1 style="font-size:42px;font-weight:900;line-height:1.3;margin-top:16px">Codex 製作小遊戲<br>與 Netlify MCP 上架</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">把一次成功，變成每次都能穩定完成</p>
+    <p style="font-size:18px;opacity:.9">從一句需求開始，完成可玩、可驗收、可分享的網頁遊戲</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">REUSE</p>
-    <h2 class="h-title">重複工作分兩條路：Work 排程，Codex 封裝專案規則</h2>
+    <p class="h-eyebrow">MISSION</p>
+    <h2 class="h-title">今日任務：做出「30 秒限時點擊遊戲」</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>⏰ ChatGPT Work</h4><p>讓已穩定的辦公流程執行一次、排程重複，或監控指定變化；重要動作仍需核准。</p></div>
-      <div class="box"><h4>🧰 Codex</h4><p>把本機專案 SOP 做成 Skill，並用 AGENTS.md 與 handoff.md 保存規則與進度。</p></div>
+      <div class="box"><h4>🎮 先完成</h4><p>用 Codex 建立網頁遊戲，在自己的電腦與手機上實際試玩。</p></div>
+      <div class="box"><h4>🌐 再分享</h4><p>連接 Netlify MCP，先建立預覽版，驗收後才正式上架。</p></div>
     </div>
-    <div class="note">兩條路都先完成一次、實際驗收，再考慮重複執行。</div>
+    <div class="note">完成標準：同學可透過公開網址開啟、玩完一局，並看到分數。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">CODEX · SKILL</p>
-    <h2 class="h-title">Codex Skill：把驗證過的 SOP 教給 Agent</h2>
+    <p class="h-eyebrow">GAME SPEC</p>
+    <h2 class="h-title">先說清楚遊戲規則，再讓 Agent 寫程式</h2>
     <div class="deco-line"></div>
     <ul class="steps">
-      <li><span class="num">1</span><div class="tx">先完成一次真實任務，記錄輸入資料、步驟、限制、交付成果與驗收規則。</div></li>
-      <li><span class="num">2</span><div class="tx">用 <b>skill-creator</b> 封裝成自己的 Skill；重複任務不用每次重寫長提示詞。</div></li>
-      <li><span class="num">3</span><div class="tx">換 3 組不同資料測試；若流程仍常出錯，先修 SOP，不急著自動化。</div></li>
+      <li><span class="num">1</span><div class="tx">按下「開始遊戲」後倒數 <b>30 秒</b>。</div></li>
+      <li><span class="num">2</span><div class="tx">目標會在遊戲區內隨機移動；點中一次加 <b>1 分</b>。</div></li>
+      <li><span class="num">3</span><div class="tx">時間到顯示總分，可按「再玩一次」重新開始。</div></li>
+      <li><span class="num">4</span><div class="tx">支援滑鼠與觸控，不收集個人資料，不需要登入。</div></li>
     </ul>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">PROJECT MEMORY</p>
-    <h2 class="h-title">AGENTS.md：專案長期工作規則</h2>
+    <p class="h-eyebrow">WORKSPACE</p>
+    <h2 class="h-title">建立獨立資料夾，只讓 Codex 修改這個專案</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx"><code>AGENTS.md</code> 是給 Agent 的專案說明，會隨工作區持續使用，不是聊天記憶。</div></li>
-      <li><span class="num">2</span><div class="tx">寫入專案目的、資料規則、禁止事項、檔名格式、驗收方式與常用操作。</div></li>
-      <li><span class="num">3</span><div class="tx">保持短而具體；只有在反覆遇到相同問題時，才新增一條長期規則。</div></li>
+      <li><span class="num">1</span><div class="tx">在「文件」建立 <code>click-game</code> 資料夾。</div></li>
+      <li><span class="num">2</span><div class="tx">用 Codex 開啟資料夾，確認目前工作區名稱正確。</div></li>
+      <li><span class="num">3</span><div class="tx">先要求 Agent 說明將建立的檔案與驗收方法，再同意開始。</div></li>
     </ol>
+    <div class="note">請勿開啟桌面、文件或雲端同步空間的整個最上層資料夾。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">CHATGPT WORK · AUTOMATE</p>
-    <h2 class="h-title">Work 流程穩定後，再排程或監控</h2>
+    <p class="h-eyebrow">PROMPT ①</p>
+    <h2 class="h-title">第一輪：先做出可玩的基本版本</h2>
+    <div class="deco-line"></div>
+    <div class="box">
+      <p><code>請在這個資料夾製作 30 秒限時點擊網頁遊戲。先盤點資料夾並列出計畫，再開始製作。要有開始、倒數、隨機移動的目標、分數、結果與重新開始；支援電腦與手機。完成後實際開啟檢查，告訴我如何試玩。</code></p>
+    </div>
+    <div class="note">第一輪先求「功能完整」，不急著加音效、動畫或複雜素材。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">VERIFY</p>
+    <h2 class="h-title">不只看 Agent 說完成：自己玩完一局</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>⏰ 適合自動化</h4><p>固定時間、固定來源、固定格式，而且失敗容易察覺的流程。</p></div>
-      <div class="box"><h4>🧑‍⚖️ 保留人工確認</h4><p>寄送、發布、評分、刪除、覆寫、個資與對外承諾。</p></div>
+      <div class="box"><h4>✅ 功能</h4><p>倒數會停在 0；每次點擊只加 1 分；結束後不再計分。</p></div>
+      <div class="box"><h4>📱 操作</h4><p>目標不會跑出邊界；手機上也能點；按鈕與文字清楚。</p></div>
+      <div class="box"><h4>🔁 重玩</h4><p>再玩一次時，分數、時間與目標狀態會正確重置。</p></div>
+      <div class="box"><h4>🛡️ 安全</h4><p>沒有要求個資、密碼或不必要的網路權限。</p></div>
     </div>
-    <div class="note">範例：「每週一整理 AI 教育新知成草稿，通知我檢查；不要自動寄出或公開發布。」</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">HANDOFF</p>
-    <h2 class="h-title">跨帳號、跨 Agent 都能接著做</h2>
+    <p class="h-eyebrow">PROMPT ②</p>
+    <h2 class="h-title">第二輪：保留玩法，做出自己的主題</h2>
+    <div class="deco-line"></div>
+    <div class="box">
+      <p><code>保留現有玩法與功能，把遊戲改成「＿＿＿」主題。請改善配色、標題、目標造型、按鈕回饋與結束畫面，並檢查手機版。不要改變 30 秒與計分規則。</code></p>
+    </div>
+    <div class="note">主題可選：打地鼠、捉蝴蝶、清理海洋垃圾、點亮星星、捕捉病毒。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">NETLIFY</p>
+    <h2 class="h-title">每位學員申請自己的 Netlify 帳號</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx"><code>AGENTS.md</code> 保存長期規則；<code>handoff.md</code> 保存本次進度、決策、問題與下一步。</div></li>
-      <li><span class="num">2</span><div class="tx">切換帳號或 Agent 前，要求它更新交接檔並列出尚未驗收的成果。</div></li>
-      <li><span class="num">3</span><div class="tx">接手者開啟同一資料夾，先讀兩份文件、盤點現況，再提出接續計畫。</div></li>
+      <li><span class="num">1</span><div class="tx">開啟 <a href="https://app.netlify.com/" target="_blank" rel="noopener"><b>app.netlify.com</b></a>，完成註冊與登入。</div></li>
+      <li><span class="num">2</span><div class="tx">確認能看到自己的 Team 與 Projects 畫面；後續網站都放在自己的帳號。</div></li>
+      <li><span class="num">3</span><div class="tx">Codex 也可能顯示其他部署選項；本堂課統一使用 <b>Netlify MCP</b>。</div></li>
     </ol>
-    <div class="note">本機檔案可以延續，但對話歷史、記憶、額度、權限與外部服務登入不一定會轉移。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">MCP SETUP</p>
+    <h2 class="h-title">在 Codex 連接 Netlify 遠端 MCP</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">請 Codex 協助連接 Netlify MCP，或在終端機執行：<br><code>codex mcp add netlify --url https://netlify-mcp.netlify.app/mcp</code></div></li>
+      <li><span class="num">2</span><div class="tx">瀏覽器出現授權畫面時，確認登入的是自己帳號，再完成授權。</div></li>
+      <li><span class="num">3</span><div class="tx">測試提示詞：<code>請使用 Netlify MCP 執行 get-user 測試，只回報帳號連線狀態，不要部署。</code></div></li>
+    </ol>
+    <div class="note">如果官方流程或指令更新，以授課當日的 Netlify 官方說明為準。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">SECURITY</p>
+    <h2 class="h-title">使用 MCP 授權；不公開 Access Token</h2>
+    <div class="deco-line"></div>
+    <figure class="guide-shot">
+      <a href="images/netlify-token-safety.png" target="_blank"><img src="images/netlify-token-safety.png" alt="Netlify 使用者設定中的 OAuth 與 Personal access tokens 畫面"></a>
+      <figcaption>Personal Access Token 等同密碼：不投影、不貼進對話、不放入簡報或 GitHub。本課以官方 MCP 授權為主。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEPLOY PREVIEW</p>
+    <h2 class="h-title">先部署預覽版，不直接上正式網站</h2>
+    <div class="deco-line"></div>
+    <div class="box">
+      <p><code>請使用 Netlify MCP 把目前的限時點擊遊戲建立為預覽部署。先檢查要發布的資料夾與檔案，不要改成正式部署。完成後提供預覽網址與驗收項目。</code></p>
+    </div>
+    <div class="note">開啟預覽網址，再玩完一局；本機正常不代表線上版一定正常。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PRODUCTION</p>
+    <h2 class="h-title">預覽驗收通過，才核准正式上架</h2>
+    <div class="deco-line"></div>
+    <ul class="steps">
+      <li><span class="num">1</span><div class="tx">開始、計分、倒數、結束與重玩全部正常。</div></li>
+      <li><span class="num">2</span><div class="tx">用手機開啟預覽網址，按鈕沒有被切掉，目標可點擊。</div></li>
+      <li><span class="num">3</span><div class="tx">確認畫面沒有學員姓名、電子郵件或其他個資。</div></li>
+      <li><span class="num">4</span><div class="tx">再要求 Netlify MCP 建立正式部署，取得 <code>.netlify.app</code> 分享網址。</div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">UPDATE</p>
+    <h2 class="h-title">網站上架不是結束：先修改，再重新部署</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">一次只提出一組清楚修改，例如加入最高分、改成 45 秒或更換主題。</div></li>
+      <li><span class="num">2</span><div class="tx">在本機重玩、建立新預覽、開啟預覽網址驗收。</div></li>
+      <li><span class="num">3</span><div class="tx">確認新功能正常且舊功能沒壞，再更新正式網站。</div></li>
+    </ol>
+    <div class="note">固定節奏：修改 → 本機驗收 → 預覽部署 → 線上驗收 → 正式部署。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">AGENT · SKILL</p>
+    <h2 class="h-title">Skill：把重複又好用的動作封裝起來</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>適合做成 Skill</h4><p>已經驗證過、之後會重複使用，而且有清楚輸入、步驟與驗收方式的流程。</p></div>
+      <div class="box"><h4>本課範例</h4><p>將「檢查網頁遊戲 → 建立 Netlify 預覽 → 回報驗收清單」做成重複流程。</p></div>
+    </div>
+    <div class="note">先成功完成至少一次，才考慮做成 Skill；不要把尚未穩定的做法自動化。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">AGENT · PROJECT RULES</p>
+    <h2 class="h-title">AGENTS.md：寫給 Agent 的專案長期規則</h2>
+    <div class="deco-line"></div>
+    <ul class="steps">
+      <li><span class="num">1</span><div class="tx">記錄專案目標、重要檔案、命名方式與禁止事項。</div></li>
+      <li><span class="num">2</span><div class="tx">記錄固定驗收：支援手機、不收集個資、部署前必須先建立預覽。</div></li>
+      <li><span class="num">3</span><div class="tx">視為專案說明，而不是聊天記憶；換新任務時 Agent 仍可先讀取。</div></li>
+    </ul>
+    <div class="note"><code>AGENTS.md</code> 是有特定用途的 Markdown 檔；不是 Agent 寫的每一個 <code>.md</code> 檔都叫 AGENTS.md。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">AGENT · HANDOFF</p>
+    <h2 class="h-title">換 Agent 之前，先請它寫好交接內容</h2>
+    <div class="deco-line"></div>
+    <div class="box">
+      <p><code>請把目前專案整理成 handoff.md，包含專案目標、已完成功能、重要檔案、已做過的測試、Netlify 部署狀態、尚未解決的問題與建議下一步。不要修改遊戲內容，不要寫入 Token 或密碼。</code></p>
+    </div>
+    <div class="note">新 Agent 接手時：先讀 <code>AGENTS.md</code> 與 <code>handoff.md</code>，盤點現況，再提出接續計畫。</div>
   </div>
 </section>
 
 <section class="slide bg ov-deep" style="background:url('images/ending.png') center/cover">
   <div class="inner">
-    <p style="font-family:'Playfair Display';font-size:54px;margin-bottom:10px">系列完成 🎉</p>
+    <p style="font-family:'Playfair Display';font-size:54px;margin-bottom:10px">遊戲上線 🎉</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">選模式 → Work 完成成果 → Codex 串接 Padlet → 排程／Skill／接力</p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px"><a href="../index.html" style="color:#9be3bd">回課程首頁</a></p>
+    <p style="font-size:20px;opacity:.92">說清楚 → 做出來 → 自己玩 → 預覽驗收 → 正式分享</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">Skill 保存重複流程，AGENTS.md 保存長期規則，handoff.md 保存本次進度。</p>
   </div>
 </section>
 
 </div>
 <div class="progress-bar" id="bar"></div>
-<div class="slide-counter" id="counter">1 / 7</div>
+<div class="slide-counter" id="counter">1 / 17</div>
 <div class="nav-hint">← → 換頁，或點畫面前進</div>
 <script>
 const slides=[...document.querySelectorAll('.slide')];
