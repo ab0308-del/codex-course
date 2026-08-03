@@ -102,24 +102,30 @@
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
     <p style="font-size:20px;opacity:.92">Padlet 收回應，Codex 幫講師看見全班</p>
     <p style="font-size:16px;margin-top:16px"><a href="https://github.com/ab0308-del/padlet-mcp" target="_blank" rel="noopener" style="color:#fff;font-weight:800">開啟 Padlet MCP GitHub 專案 ↗</a></p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：Skill、自動化與工作接力</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：Codex 小遊戲與 Netlify MCP 上架</p>
   </div>
 </section>
 
 </div>
 <div class="progress-bar" id="bar"></div>
 <div class="slide-counter" id="counter">1 / 7</div>
-<div class="nav-hint">← → 換頁，或點畫面前進</div>
+<div class="nav-hint">使用鍵盤 ← → 或下方按鈕換頁</div>
+<nav class="slide-nav" aria-label="投影片換頁">
+  <button id="prevBtn" type="button">← 上一頁</button>
+  <button id="nextBtn" type="button">下一頁 →</button>
+</nav>
 <script>
 const slides=[...document.querySelectorAll('.slide')];
-const bar=document.getElementById('bar'),counter=document.getElementById('counter');
+const bar=document.getElementById('bar'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
 let cur=0;
 function show(n){cur=Math.max(0,Math.min(n,slides.length-1));
   slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.classList.toggle('prev',i<cur);});
-  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;}
+  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;
+  prevBtn.disabled=cur===0;nextBtn.disabled=cur===slides.length-1;}
 show(0);
-document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();show(cur-1);}});
-document.getElementById('wrap').addEventListener('click',e=>{if(e.target.closest('a'))return;show(cur+1);});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(cur+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(cur-1);}});
+prevBtn.addEventListener('click',()=>show(cur-1));
+nextBtn.addEventListener('click',()=>show(cur+1));
 </script>
 </body>
 </html>

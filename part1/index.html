@@ -38,6 +38,15 @@
 
 <section class="slide">
   <div class="wrap">
+    <figure class="guide-shot full-shot">
+      <a href="images/chat-work-codex-roles.png" target="_blank"><img src="images/chat-work-codex-roles.png" alt="Chat、Work 與 Codex 的工作分工比較圖"></a>
+      <figcaption>先判斷現在需要的是討論、交付成果，還是進入專案施工。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
     <p class="h-eyebrow">SETUP ①</p>
     <h2 class="h-title">下載、登入與建立練習工作區</h2>
     <div class="deco-line"></div>
@@ -173,18 +182,24 @@
 
 </div>
 <div class="progress-bar" id="bar"></div>
-<div class="slide-counter" id="counter">1 / 7</div>
-<div class="nav-hint">← → 換頁，或點畫面前進</div>
+<div class="slide-counter" id="counter">1 / 14</div>
+<div class="nav-hint">使用鍵盤 ← → 或下方按鈕換頁</div>
+<nav class="slide-nav" aria-label="投影片換頁">
+  <button id="prevBtn" type="button">← 上一頁</button>
+  <button id="nextBtn" type="button">下一頁 →</button>
+</nav>
 <script>
 const slides=[...document.querySelectorAll('.slide')];
-const bar=document.getElementById('bar'),counter=document.getElementById('counter');
+const bar=document.getElementById('bar'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
 let cur=0;
 function show(n){cur=Math.max(0,Math.min(n,slides.length-1));
   slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.classList.toggle('prev',i<cur);});
-  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;}
+  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;
+  prevBtn.disabled=cur===0;nextBtn.disabled=cur===slides.length-1;}
 show(0);
-document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();show(cur-1);}});
-document.getElementById('wrap').addEventListener('click',e=>{if(e.target.closest('a'))return;show(cur+1);});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(cur+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(cur-1);}});
+prevBtn.addEventListener('click',()=>show(cur-1));
+nextBtn.addEventListener('click',()=>show(cur+1));
 </script>
 </body>
 </html>
