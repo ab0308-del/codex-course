@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChatGPT AI Agent Part 4 — Codex 小遊戲與 Netlify MCP 上架</title>
+<title>ChatGPT AI Agent Part 4 — 外掛程式與 MCP：連接外部工具</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -13,11 +13,175 @@
 
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
-    <p class="eyebrow">ChatGPT AI Agent Part 4</p>
-    <h1 style="font-size:42px;font-weight:900;line-height:1.3;margin-top:16px">Codex 製作小遊戲<br>與 Netlify MCP 上架</h1>
+    <p class="eyebrow">ChatGPT AI Agent Part 4 · 進階</p>
+    <h1 style="font-size:44px;font-weight:900;line-height:1.3;margin-top:16px">外掛程式與 MCP<br>連接外部工具</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">從一句需求開始，完成可玩、可驗收、可分享的網頁遊戲</p>
+    <p style="font-size:18px;opacity:.9">Padlet MCP、NotebookLM MCP、Netlify MCP 與網頁遊戲上架</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">CONNECT</p>
+    <h2 class="h-title">讓 Agent 連上外部工具的幾種方式</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>🧩 外掛程式／Connector</h4><p>官方做好的連接，登入授權後就能使用，例如 Google、GitHub、Notion、Canva。</p></div>
+      <div class="box"><h4>🔌 MCP</h4><p>AI 與外部工具的「標準插頭」；自己加入伺服器，連接更多服務。</p></div>
+      <div class="box"><h4>🧭 Skill</h4><p>教 AI 一套可重複使用的 SOP。</p></div>
+      <div class="box"><h4>⏰ Automation</h4><p>在指定時間重複執行已穩定的流程。</p></div>
+    </div>
+    <div class="note">這一堂是進階內容，需要在 <b>Codex</b> 中操作：安裝 MCP 會用到本機設定與終端機。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PLUGINS</p>
+    <h2 class="h-title">外掛程式：先認識，有需要再開啟</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>🐙 GitHub</h4><p>讀取與管理程式專案、建立網頁版本紀錄，搭配 GitHub Pages 發布網站。</p></div>
+      <div class="box"><h4>📓 Notion</h4><p>搜尋與整理 Notion 頁面、資料庫，把成果寫回筆記。</p></div>
+      <div class="box"><h4>🟢 Google 家族</h4><p>Gmail、Google 雲端硬碟、日曆、文件、試算表：讀信、找檔、排行程。</p></div>
+      <div class="box"><h4>🎨 Canva</h4><p>搜尋與建立 Canva 設計，把內容套進範本做成海報或簡報。</p></div>
+    </div>
+    <div class="note">開啟方式：設定 → 應用程式（連接器）→ 選擇服務 → 登入授權。只開需要的，用不到就取消授權。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">⚠️ SECURITY</p>
+    <h2 class="h-title">Token 與 API Key 等同密碼，絕對不要公開</h2>
+    <div class="deco-line" style="background:#C0392B"></div>
+    <div class="warn">
+      <b>不投影、不截圖</b>：產生 Token 的畫面不要出現在簡報、錄影或直播。<br>
+      <b>不貼進對話</b>：不要把 Token 直接貼給 AI；用安裝精靈或官方授權流程輸入。<br>
+      <b>不放進檔案</b>：不寫進簡報、筆記、AGENTS.md、handoff.md，也不上傳到 GitHub。<br>
+      <b>外洩就作廢</b>：懷疑外洩時，立刻到該服務的設定頁刪除舊 Token、重新產生。
+    </div>
+    <div class="note">能用官方 OAuth 授權（跳出瀏覽器登入）的，就不要用 Personal Access Token。</div>
+  </div>
+</section>
+
+<!-- Padlet MCP -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">MCP 1</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">Padlet MCP：打造 AI 研習助教</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">建立互動牆、整理回應、草擬個別回饋</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PADLET · SETUP</p>
+    <h2 class="h-title">安裝 Padlet MCP，先確認連線</h2>
+    <div class="deco-line"></div>
+    <ul class="steps">
+      <li><span class="num">1</span><div class="tx">在 ChatGPT 桌面應用程式切換到 <b>Codex</b>，再開啟 <a href="https://github.com/ab0308-del/padlet-mcp" target="_blank" rel="noopener"><b>Padlet MCP GitHub 專案</b></a>。</div></li>
+      <li><span class="num">2</span><div class="tx">Padlet 付費帳號到「設定 → Developer」產生 API Key；<b>金鑰不得貼在對話或投影畫面</b>。</div></li>
+      <li><span class="num">3</span><div class="tx">終端機執行 <code>npx -y padlet-mcp setup</code>，在本機安裝精靈輸入金鑰，完成後重啟 ChatGPT 應用程式。</div></li>
+      <li><span class="num">4</span><div class="tx">輸入：「<b>用 Padlet 的 whoami 確認連線，只讀取資料。</b>」看到自己的帳號即成功。</div></li>
+    </ul>
+    <div class="note">沒有 API Key 的學員使用講師示範牆參與，不讓帳號方案阻斷學習。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PADLET · TASK ①</p>
+    <h2 class="h-title">一句話建立研習互動牆</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">指定對象、主題、區段與每區引導問題。</div></li>
+      <li><span class="num">2</span><div class="tx">要求 Codex 先在對話中預覽版面結構，確認後才建立。</div></li>
+      <li><span class="num">3</span><div class="tx">建立後回到 Padlet，手動檢查分享權限，並視需要開啟留言與 reactions。</div></li>
+    </ol>
+    <span class="code">請規劃一面「AI Agent 教師研習」Padlet，分成：
+課前期待、今天學到什麼、可以應用在哪裡、仍然想問的問題。
+每區放 2 個簡短引導問題。先預覽內容，等我確認後再建立。</span>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PADLET · TASK ②</p>
+    <h2 class="h-title">讀取全班回應，先摘要、不回寫</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>📊 分類統整</h4><p>將回應整理為「已理解、想應用、仍有疑問」，統計數量與常見觀點。</p></div>
+      <div class="box"><h4>🔎 保留例外</h4><p>不確定、離題、可能涉及個資的內容另外列出，不替學員猜測。</p></div>
+    </div>
+    <div class="note">提示詞：「先在對話中提供摘要，不要直接貼回 Padlet。」讀取與外部寫入是兩個不同授權階段。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">PADLET · TASK ③</p>
+    <h2 class="h-title">個別回饋：預覽、確認、再留言</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">請 Codex 為每則回應<b>草擬</b>一句具體、友善、能引導思考的回饋。</div></li>
+      <li><span class="num">2</span><div class="tx">講師逐則檢查語氣、正確性與是否洩漏個資。</div></li>
+      <li><span class="num">3</span><div class="tx">只把確認過的回饋留言到對應貼文；無法配對就停止詢問。</div></li>
+      <li><span class="num">4</span><div class="tx">可延伸：答對加 ❤️、迷思用蘇格拉底式問題回應，但先確認 Padlet 已開啟互動。</div></li>
+      <li><span class="num">5</span><div class="tx">最後產出研習摘要：主要收穫、待解問題、後續行動與人工處理清單。</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- NotebookLM MCP -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">MCP 2</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">NotebookLM MCP</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">讓 Agent 幫你建立筆記本、加入來源、產生語音摘要</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">NOTEBOOKLM · SETUP</p>
+    <h2 class="h-title">安裝 NotebookLM MCP，先確認連線</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">安裝工具（社群開發，非 Google 官方）：<code>uv tool install notebooklm-mcp-cli</code></div></li>
+      <li><span class="num">2</span><div class="tx">登入：<code>nlm login</code>，在跳出的瀏覽器登入 Google 帳號。</div></li>
+      <li><span class="num">3</span><div class="tx">加入 Codex：<code>codex mcp add notebooklm-mcp -- notebooklm-mcp</code>，再重新開啟 Codex。</div></li>
+      <li><span class="num">4</span><div class="tx">測試提示詞：<code>請用 NotebookLM MCP 列出我的筆記本，只讀取，不要建立或刪除。</code></div></li>
+    </ol>
+    <div class="note">它使用你的 Google 登入狀態運作：建議用<b>教學專用帳號</b>，不要用存有學生資料的帳號。指令以授課當日說明為準。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">NOTEBOOKLM · TASK</p>
+    <h2 class="h-title">一句話建立教學筆記本與語音摘要</h2>
+    <div class="deco-line"></div>
+    <p class="sub">延續 Part 2 任務 3：把紅毛城的官方資料交給 NotebookLM 整理。</p>
+    <span class="code">請用 NotebookLM MCP 建立一個「淡水紅毛城戶外教育」筆記本：
+1．把我提供的官方網址加入為來源，先列出清單讓我確認。
+2．來源加入後，請 NotebookLM 回答：「四年級學生參觀前最需要知道的三件事？」
+3．產生一段給學生聽的中文語音摘要，完成後告訴我在哪裡收聽。
+不要刪除或修改我其他的筆記本。</span>
+    <div class="note">驗收：到 NotebookLM 網頁確認筆記本、來源數量與語音摘要都正確。</div>
+  </div>
+</section>
+
+<!-- Netlify MCP -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">MCP 3</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">Codex 小遊戲 × Netlify MCP</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">從一句需求開始，完成可玩、可驗收、可分享的網頁遊戲</p>
   </div>
 </section>
 
@@ -162,6 +326,7 @@
       <li><span class="num">3</span><div class="tx">確認畫面沒有學員姓名、電子郵件或其他個資。</div></li>
       <li><span class="num">4</span><div class="tx">再要求 Netlify MCP 建立正式部署，取得 <code>.netlify.app</code> 分享網址。</div></li>
     </ul>
+    <span class="code">請將整個網站部署到 Netlify，先提供幾個自訂網址供我選擇參考，決定後再正式上傳。</span>
   </div>
 </section>
 
@@ -220,16 +385,16 @@
 
 <section class="slide bg ov-deep" style="background:url('images/ending.png') center/cover">
   <div class="inner">
-    <p style="font-family:'Playfair Display';font-size:54px;margin-bottom:10px">遊戲上線 🎉</p>
+    <p style="font-family:'Playfair Display';font-size:54px;margin-bottom:10px">接上工具 🔌</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">說清楚 → 做出來 → 自己玩 → 預覽驗收 → 正式分享</p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">Skill 保存重複流程，AGENTS.md 保存長期規則，handoff.md 保存本次進度。</p>
+    <p style="font-size:20px;opacity:.92">外掛一鍵授權、MCP 自己接；授權用官方流程，Token 絕不公開</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 5：結語，使用 AI Agent 的想法、流程與安全</p>
   </div>
 </section>
 
 </div>
 <div class="progress-bar" id="bar"></div>
-<div class="slide-counter" id="counter">1 / 17</div>
+<div class="slide-counter" id="counter">1 / 28</div>
 <div class="nav-hint">使用鍵盤 ← → 或下方按鈕換頁</div>
 <nav class="slide-nav" aria-label="投影片換頁">
   <button id="prevBtn" type="button">← 上一頁</button>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex Part 3 — Padlet MCP：打造 AI 研習助教</title>
+<title>ChatGPT AI Agent Part 3 — Computer Use、Work 與 Codex 實戰示範</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -13,86 +13,178 @@
 
 <section class="slide bg ov" style="background:url('images/cover.png') center/cover">
   <div class="inner">
-    <p class="eyebrow">Codex Part 3</p>
-    <h1 style="font-size:48px;font-weight:900;line-height:1.25;margin-top:16px">Padlet MCP<br>打造 AI 研習助教</h1>
+    <p class="eyebrow">ChatGPT AI Agent Part 3</p>
+    <h1 style="font-size:46px;font-weight:900;line-height:1.25;margin-top:16px">Computer Use<br>與 Agent 實戰示範</h1>
     <div class="deco-line" style="margin:20px auto;background:var(--accent-4)"></div>
-    <p style="font-size:18px;opacity:.9">建立互動牆、整理回應、草擬個別回饋</p>
+    <p style="font-size:18px;opacity:.9">讓 AI 操作電腦，再看 Work 與 Codex 各完成一個任務</p>
     <p style="font-size:15px;opacity:.75;margin-top:8px">新北市大豐國小　·　許凱琳老師</p>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">CONNECT</p>
-    <h2 class="h-title">MCP：AI 與外部工具的標準插頭</h2>
+    <p class="h-eyebrow">TODAY</p>
+    <h2 class="h-title">今天看三個示範</h2>
     <div class="deco-line"></div>
-    <p class="sub" style="margin-bottom:8px">不同擴充方式負責不同層次；今天用 Padlet MCP 完成一條講師工作流：</p>
-    <div class="grid2">
-      <div class="box"><h4>📦 Plugin</h4><p>可安裝的一整組能力與工作流程。</p></div>
-      <div class="box"><h4>🧭 Skill</h4><p>教 AI 一套可重複使用的 SOP。</p></div>
-      <div class="box"><h4>🔌 MCP／Connector</h4><p>連接即時外部資料與可執行動作。</p></div>
-      <div class="box"><h4>⏰ Automation</h4><p>在指定時間重複執行已穩定的流程。</p></div>
+    <div class="grid2 grid3">
+      <div class="box"><h4>🖱️ Computer Use</h4><p>AI 看著螢幕、移動滑鼠、打字，操作一般桌面軟體。</p></div>
+      <div class="box"><h4>📁 ChatGPT Work</h4><p>讀取資料夾裡的檔案，產出 Word、Excel、簡報等辦公成果。</p></div>
+      <div class="box"><h4>💻 Codex</h4><p>在專案資料夾寫程式，做出可以操作的網頁或工具。</p></div>
     </div>
-    <div class="note">這一堂切換到 Codex：因為安裝 MCP 需要本機設定與終端機，再由 Codex 連接 Padlet 完成講師工作流。</div>
+    <div class="note">Work 與 Codex 的示範內容依當天狀況調整；重點是看懂「交辦 → 計畫 → 執行 → 驗收」的過程。</div>
+  </div>
+</section>
+
+<!-- Computer Use -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">DEMO 1</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">Computer Use</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">沒有外掛、沒有 API 的軟體，讓 AI 像人一樣點點看</p>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">SETUP</p>
-    <h2 class="h-title">安裝 Padlet MCP，先確認連線</h2>
-    <div class="deco-line"></div>
-    <ul class="steps">
-      <li><span class="num">1</span><div class="tx">在 ChatGPT 桌面應用程式切換到 <b>Codex</b>，再開啟 <a href="https://github.com/ab0308-del/padlet-mcp" target="_blank" rel="noopener"><b>Padlet MCP GitHub 專案</b></a>。</div></li>
-      <li><span class="num">2</span><div class="tx">Padlet 付費帳號到「設定 → Developer」產生 API Key；金鑰不得貼在對話或投影畫面。</div></li>
-      <li><span class="num">3</span><div class="tx">終端機執行 <code>npx -y padlet-mcp setup</code>，在本機安裝精靈輸入金鑰，完成後重啟 ChatGPT 應用程式。</div></li>
-      <li><span class="num">4</span><div class="tx">輸入：「<b>用 Padlet 的 whoami 確認連線，只讀取資料。</b>」看到自己的帳號即成功。</div></li>
-    </ul>
-    <div class="note">沒有 API Key 的學員使用講師示範牆參與，不讓帳號方案阻斷學習。</div>
-  </div>
-</section>
-
-<section class="slide">
-  <div class="wrap">
-    <p class="h-eyebrow">TASK ①</p>
-    <h2 class="h-title">一句話建立研習互動牆</h2>
-    <div class="deco-line"></div>
-    <ol class="steps">
-      <li><span class="num">1</span><div class="tx">指定對象、主題、區段與每區引導問題。</div></li>
-      <li><span class="num">2</span><div class="tx">要求 Codex 先在對話中預覽版面結構，確認後才建立。</div></li>
-      <li><span class="num">3</span><div class="tx">建立後回到 Padlet，手動檢查分享權限，並視需要開啟留言與 reactions。</div></li>
-    </ol>
-    <span class="code">請規劃一面「AI Agent 教師研習」Padlet，分成：
-課前期待、今天學到什麼、可以應用在哪裡、仍然想問的問題。
-每區放 2 個簡短引導問題。先預覽內容，等我確認後再建立。</span>
-  </div>
-</section>
-
-<section class="slide">
-  <div class="wrap">
-    <p class="h-eyebrow">TASK ②</p>
-    <h2 class="h-title">讀取全班回應，先摘要、不回寫</h2>
+    <p class="h-eyebrow">CONCEPT</p>
+    <h2 class="h-title">Computer Use：AI 看螢幕、動滑鼠、打字</h2>
     <div class="deco-line"></div>
     <div class="grid2">
-      <div class="box"><h4>📊 分類統整</h4><p>將回應整理為「已理解、想應用、仍有疑問」，統計數量與常見觀點。</p></div>
-      <div class="box"><h4>🔎 保留例外</h4><p>不確定、離題、可能涉及個資的內容另外列出，不替學員猜測。</p></div>
+      <div class="box"><h4>✅ 適合用 Computer Use</h4><p>需要「看畫面、點按鈕」的工作：Windows 工具（工作管理員）、一般網頁、只有桌面版的軟體。</p></div>
+      <div class="box"><h4>↪️ 改用其他方式</h4><p>已經有外掛或 MCP 能直接連的服務（Google、Notion、Padlet），用外掛更快、更準。</p></div>
+      <div class="box"><h4>🐢 速度</h4><p>它要「截圖 → 判斷 → 點擊」反覆進行，比直接處理檔案慢。</p></div>
+      <div class="box"><h4>👀 全程可見</h4><p>每一步都在螢幕上發生，老師可以邊看邊隨時喊停。</p></div>
     </div>
-    <div class="note">提示詞：「先在對話中提供摘要，不要直接貼回 Padlet。」讀取與外部寫入是兩個不同授權階段。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
-    <p class="h-eyebrow">TASK ③</p>
-    <h2 class="h-title">個別回饋：預覽、確認、再留言</h2>
+    <p class="h-eyebrow">SETUP · SAFETY</p>
+    <h2 class="h-title">開始前：安裝瀏覽器外掛，只開放需要的程式</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx">請 Codex 為每則回應<b>草擬</b>一句具體、友善、能引導思考的回饋。</div></li>
-      <li><span class="num">2</span><div class="tx">講師逐則檢查語氣、正確性與是否洩漏個資。</div></li>
-      <li><span class="num">3</span><div class="tx">只把確認過的回饋留言到對應貼文；無法配對就停止詢問。</div></li>
-      <li><span class="num">4</span><div class="tx">可延伸：答對加 ❤️、迷思用蘇格拉底式問題回應，但先確認 Padlet 已開啟互動。</div></li>
-      <li><span class="num">5</span><div class="tx">最後產出研習摘要：主要收穫、待解問題、後續行動與人工處理清單。</div></li>
+      <li><span class="num">1</span><div class="tx">先安裝 <b>ChatGPT 瀏覽器外掛（擴充功能）</b>，Computer Use 才能操作瀏覽器裡的網頁。</div></li>
+      <li><span class="num">2</span><div class="tx">在設定中只允許本次需要的 App，例如<b>瀏覽器</b>、<b>工作管理員</b>與<b>檔案總管</b>。</div></li>
+      <li><span class="num">3</span><div class="tx">先關掉 LINE、信箱、校務系統等<b>含個資的視窗</b>，AI 看得到螢幕上的一切。</div></li>
+      <li><span class="num">4</span><div class="tx">AI 操作時不要同時動滑鼠或鍵盤；登入、付款、寄送、刪除前一律<b>停下來由人確認</b>。</div></li>
     </ol>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEMO 1-1 — 提示詞</p>
+    <h2 class="h-title">檢查電腦效能</h2>
+    <div class="deco-line"></div>
+    <p class="sub">電腦變慢了？讓 Computer Use 打開工作管理員幫你看，順便學會自己怎麼看。</p>
+    <span class="code">請使用 Computer Use 幫我檢查這台電腦的效能：
+
+1．開啟「工作管理員」（Ctrl＋Shift＋Esc），切到「效能」與「處理程序」。
+2．回報目前 CPU、記憶體、磁碟的使用率。
+3．找出最耗記憶體的前 5 個程式，用表格列出名稱與用量。
+4．建議哪些可以關閉，並說明原因。
+不要自己結束任何程式；做完後教我下次怎麼自己看。</span>
+    <div class="note">連結 Part 5：同時開太多 Agent 任務會吃掉記憶體，這就是檢查的方法。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEMO 1-2 — 提示詞</p>
+    <h2 class="h-title">把選擇題做成 Google 表單測驗</h2>
+    <div class="deco-line"></div>
+    <p class="sub">延續 Part 2 任務 3：把紅毛城的 5 題選擇題，一題一題點進 Google 表單，做成可自動批改的測驗。</p>
+    <span class="code">請使用 Computer Use 幫我建立 Google 表單測驗：
+
+1．開啟練習資料夾中的「紅毛城 5 題選擇題」Word，讀取題目、選項與答案。
+2．用瀏覽器開啟 Google 表單（使用已登入的帳號），新增空白表單，標題「淡水紅毛城行前小測驗」。
+3．在設定中開啟「設為測驗」。
+4．逐題建立選擇題，設定正確答案，每題 20 分。
+5．完成後把表單的編輯網址給我。
+不要輸入任何密碼；不要按「傳送」或分享給任何人，由我檢查後再發給學生。</span>
+    <div class="note">這是 Computer Use 的強項：沒有現成外掛，但需要大量重複的點選與輸入。</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEMO 1 — 驗收</p>
+    <h2 class="h-title">不只看它說完成：自己確認結果</h2>
+    <div class="deco-line"></div>
+    <div class="grid2">
+      <div class="box"><h4>📊 效能檢查</h4><p>自己打開工作管理員，數字和它回報的差不多；它沒有擅自結束程式。</p></div>
+      <div class="box"><h4>📝 表單測驗</h4><p>自己用「預覽」作答一次：5 題都在、選項正確、交卷後分數正確。</p></div>
+      <div class="box"><h4>🛡️ 過程</h4><p>沒有開啟不相關的程式，沒有輸入密碼，沒有自行傳送或分享表單。</p></div>
+      <div class="box"><h4>🧑‍🏫 學到方法</h4><p>下次不靠 AI，自己也會看效能、會設定表單測驗。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Work -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">DEMO 2</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">ChatGPT Work 示範</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">資料夾裡的檔案 → 可以直接交出去的辦公成果</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEMO 2 — 示範範例</p>
+    <h2 class="h-title">研習回饋表 → 統計圖表 → 成果報告</h2>
+    <div class="deco-line"></div>
+    <p class="sub"><span class="pill">示範內容以當天為準</span>情境：研習結束後，把回饋表 Excel 整理成可以交給學校的成果報告。</p>
+    <span class="code">請讀取資料夾中的「研習回饋表」Excel：
+
+1．統計各題滿意度的平均與分布，畫成長條圖。
+2．把開放式意見分成「收穫」「建議」「疑問」三類，各列出代表性意見。
+3．整理成一份 A4 兩頁的 Word 成果報告，含圖表與結論。
+先告訴我你的整理方式，確認後再產出；意見原文不要改寫成沒說過的內容。</span>
+    <div class="note">觀察重點：Work 怎麼盤點資料、先提計畫，以及產出後如何對照原始數據驗收。</div>
+  </div>
+</section>
+
+<!-- Codex -->
+<section class="slide bg ov" style="background:url('images/sec.png') center/cover">
+  <div class="inner">
+    <p class="eyebrow">DEMO 3</p>
+    <h2 style="font-size:44px;font-weight:900;margin-top:12px">Codex 示範</h2>
+    <div class="deco-line" style="margin:18px auto;background:var(--accent-4)"></div>
+    <p style="font-size:18px;opacity:.9">一段清楚的需求 → 一個可以玩的網頁遊戲</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">DEMO 3 — 示範範例</p>
+    <h2 class="h-title">成語填空小遊戲</h2>
+    <div class="deco-line"></div>
+    <p class="sub"><span class="pill">示範內容以當天為準</span>先開一個獨立的專案資料夾，再交給 Codex。</p>
+    <span class="code">請在這個資料夾製作一個成語填空網頁遊戲：
+1．開始有啟動畫面，顯示遊戲說明。
+2．每次隨機抽 10 個四字成語，隨機隱藏其中一個字，從 4 個候選字中選出正確答案。
+3．每題有倒數計時，用時間血條顯示；答題進度用另一條血條顯示，兩者要區分清楚。
+4．答對顯示慶祝動畫並自動進入下一題；答錯彈出正確答案，短暫停留後自動關閉。
+5．每題 10 分，滿分 100 分，結束時顯示結算畫面與分數。
+先告訴我你要怎麼做，確認後再開始；完成後實際開啟測試，告訴我怎麼試玩。</span>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <p class="h-eyebrow">CHOOSE</p>
+    <h2 class="h-title">三種 Agent 怎麼選</h2>
+    <div class="deco-line"></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="tx">要處理<b>檔案與文件</b>（Word、Excel、PDF、照片）→ <b>ChatGPT Work</b></div></li>
+      <li><span class="num">2</span><div class="tx">要<b>寫程式、做網頁、連接 MCP</b> → <b>Codex</b></div></li>
+      <li><span class="num">3</span><div class="tx">要<b>操作沒有外掛的桌面軟體</b> → <b>Computer Use</b></div></li>
+    </ol>
+    <div class="note">選錯也沒關係：先問 Agent「這件事用哪一種方式最適合？」它會建議你。</div>
   </div>
 </section>
 
@@ -100,15 +192,14 @@
   <div class="inner">
     <p style="font-family:'Playfair Display';font-size:60px;margin-bottom:10px">謝謝</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
-    <p style="font-size:20px;opacity:.92">Padlet 收回應，Codex 幫講師看見全班</p>
-    <p style="font-size:16px;margin-top:16px"><a href="https://github.com/ab0308-del/padlet-mcp" target="_blank" rel="noopener" style="color:#fff;font-weight:800">開啟 Padlet MCP GitHub 專案 ↗</a></p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：Codex 小遊戲與 Netlify MCP 上架</p>
+    <p style="font-size:20px;opacity:.92">Computer Use 動手、Work 處理檔案、Codex 寫程式</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 4：外掛程式與 MCP，連接外部工具</p>
   </div>
 </section>
 
 </div>
 <div class="progress-bar" id="bar"></div>
-<div class="slide-counter" id="counter">1 / 7</div>
+<div class="slide-counter" id="counter">1 / 14</div>
 <div class="nav-hint">使用鍵盤 ← → 或下方按鈕換頁</div>
 <nav class="slide-nav" aria-label="投影片換頁">
   <button id="prevBtn" type="button">← 上一頁</button>
