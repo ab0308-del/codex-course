@@ -1,0 +1,241 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agent 學員操作筆記</title><style>body{max-width:920px;margin:40px auto;padding:0 24px;font-family:system-ui;line-height:1.9;color:#21392e;background:#fafaf7}h1{font-size:30px}h2{margin-top:48px;border-bottom:2px solid #63a67c;padding-bottom:8px}p{white-space:pre-wrap}pre{white-space:pre-wrap;background:#edf5ef;padding:20px;font:17px/1.85 system-ui;border-left:4px solid #2d6a4f;border-radius:8px}button{padding:9px 18px;background:#2d6a4f;color:white;border:0;border-radius:7px;font-size:16px;cursor:pointer}a{color:#216549;overflow-wrap:anywhere}nav{padding:18px;background:#edf5ef}nav a{display:inline-block;margin-right:15px}.check{color:#76551b} @media print{button,nav{display:none}pre{break-inside:avoid}}</style><h1>AI Agent 教師研習｜操作筆記</h1><nav>
+<a href="#s0">AI Agent 教師研習｜學員操作筆記</a>
+<a href="#s1">研習入口</a>
+<a href="#s2">課前準備</a>
+<a href="#s3">Chat、Work 與 Codex 怎麼選</a>
+<a href="#s4">個人化設定｜換成自己的介紹</a>
+<a href="#s5">操作一：爬文｜搜尋資源，規劃 SEL 課程</a>
+<a href="#s6">操作二：生圖｜延續操作一，製作繪本式簡報</a>
+<a href="#s7">操作三：AI 助理｜從 Google Drive 取得研習素材</a>
+<a href="#s8">操作四：不同檔案的連結｜Excel＋Word 批次製作獎狀</a>
+<a href="#s9">操作五：閱讀照片｜整理旅遊照片</a>
+<a href="#s10">操作六：做網頁｜成語填空小遊戲</a>
+<a href="#s11">操作六補充｜360 環景教材生成器</a>
+<a href="#s12">Computer Use｜讓 AI 操作電腦或瀏覽器</a>
+<a href="#s13">MCP｜把外部工具接給 AI 使用</a>
+<a href="#s14">Padlet MCP｜連線與規劃互動牆</a>
+<a href="#s15">Gemini Notebook MCP｜先讀 MD，再協助連接</a>
+<a href="#s16">Gemini Notebook MCP｜連接步驟參考</a>
+<a href="#s17">Gemini Notebook MCP｜把 SEL 資源變成教學素材</a>
+<a href="#s18">Netlify｜把操作六的遊戲分享出去</a>
+<a href="#s19">Netlify｜先給我預覽</a>
+<a href="#s20">Netlify｜確認後才正式上架</a>
+<a href="#s21">我最常對 Agent 說的話</a>
+<a href="#s22">加練範例｜口述填入 Word 表單</a>
+<a href="#s23">加練範例｜整理公務資料夾</a>
+<a href="#s24">加練範例｜學力檢測命題</a>
+<a href="#s25">延伸閱讀</a>
+</nav>
+<section id="s0"><h2>AI Agent 教師研習｜學員操作筆記</h2><p>六個操作與延伸應用
+許凱琳老師｜整理版 2026/10/22
+【】裡是可以改的內容。每個「直接貼上」區塊可一次複製，不必先學會專業提示詞。
+看到「等我確認」時，先檢查成果，再回覆 AI 繼續。這份筆記裡的操作範例不會自動執行。</p>
+</section>
+<section id="s1"><h2>研習入口</h2><p>課程簡報：<a href="https://ab0308-del.github.io/codex-course/">https://ab0308-del.github.io/codex-course/</a>
+範例與截圖：<a href="https://padlet.com/ab0308/ai-agent-s024hck04xwtok7u6uiw">https://padlet.com/ab0308/ai-agent-s024hck04xwtok7u6uiw</a>
+研習素材：<a href="https://drive.google.com/drive/folders/1B7XGOsAgMnHDs9dcXMlUc6bNgDRKpiUH">https://drive.google.com/drive/folders/1B7XGOsAgMnHDs9dcXMlUc6bNgDRKpiUH</a>
+講師提供的點數領取入口：<a href="https://ai.nmking.io/pqsom">https://ai.nmking.io/pqsom</a>
+給講師的回饋：<a href="https://smart.xdai.tw/activity/34/feedback">https://smart.xdai.tw/activity/34/feedback</a>
+點數入口是否適用，以研習當天講師說明為準。</p>
+</section>
+<section id="s2"><h2>課前準備</h2><p>登入自己的 ChatGPT 帳號，確認能用的模式與剩餘用量。在電腦建立一個獨立的研習練習資料夾，先放練習素材。
+操作一、二接著做；操作三取得素材，再進行操作四、五。操作六完成本機遊戲後，再接 Netlify 分享。
+原始素材中的資料夾編號沿用舊版，請依名稱找「批次製作獎狀」與「旅遊照片整理」，以本筆記的操作編號為準。</p>
+</section>
+<section id="s3"><h2>Chat、Work 與 Codex 怎麼選</h2><p>Chat：先討論想法、修改文字、釐清需求。
+Work：交代要完成的成果，例如搜尋資料、做文件、整理照片與簡報。
+Codex：適合查看程式修改、處理專案與執行測試。本研習操作六以 Codex 示範。
+Work 和 Codex 能做的事有重疊，也都能用口語交辦；桌面本機任務能否處理資料夾，取決於當天可用工具及授權。Computer Use 是操作畫面的能力，不是第三種產品模式。
+參考：<a href="https://learn.chatgpt.com/docs/use-chatgpt">https://learn.chatgpt.com/docs/use-chatgpt</a></p>
+</section>
+<section id="s4"><h2>個人化設定｜換成自己的介紹</h2><p>把姓名和任教領域改成自己的內容，再放入個人化設定。</p>
+<button type="button" data-copy="p4">複製這段指令</button><pre id="p4">我的名字叫做【姓名】，是一位【國小自然科教師】。
+請使用繁體中文回覆，中文使用全形標點符號。
+請用清楚、口語的方式說明，不確定的地方直接告訴我。
+請減少表情符號，直接切入重點。</pre>
+</section>
+<section id="s5"><h2>操作一：爬文｜搜尋資源，規劃 SEL 課程</h2><p>選好練習資料夾。貼上後先看課程大綱，確認後才準備第一週。</p>
+<button type="button" data-copy="p5">複製這段指令</button><pre id="p5">我要製作【SEL】課程，請建立一個叫做【SEL】的資料夾，這次搜尋到的資料和製作的檔案，都放在這個資料夾裡。
+
+1. 我要設計【4】堂課，分成【4】次上課，每堂【40 分鐘】，對象是【國小四年級學生】，主題是【SEL】。
+幫我搜尋網路上可用的教學資源，整理資源介紹、來源和網址，存成 Word 格式，檔名為「網路資源」。
+再幫我草擬課程大綱，內容要有每堂課的主題、學習目標和活動安排，存成 Word 格式，檔名為「【SEL】課程大綱」。
+
+2. 請以臺灣國小的教學情境來規劃，也幫我想想還需要哪些教學資料，先提出建議，跟我討論。做到這裡先停下來，等我確認課程大綱。
+
+3. 等我確認後，再準備第一週上課會用到的教案、學習單和材料清單，用 Word 格式存入「第一週」資料夾。PPT 先不要做，我們再另外討論。</pre>
+<p class="check">完成後看看：打開 Word，看看活動是否適合四年級、時間安排是否可行，並點開資源網址核對。</p>
+</section>
+<section id="s6"><h2>操作二：生圖｜延續操作一，製作繪本式簡報</h2><p>等第一週課程確認後，在同一個對話接著貼。子代理功能依當天工具而定，沒有時請 AI 說明可用的分工方式。</p>
+<button type="button" data-copy="p6">複製這段指令</button><pre id="p6">現在我們來把【第一週的 SEL 課程】做成【12】頁的繪本式簡報，給【國小四年級學生】上課使用。
+
+每一頁都用全版繪本插圖來設計，使用 imagegen 工具生圖，整份簡報的人物和畫風要一致。圖片裡不要放文字，文字另外放在投影片上，讓我之後可以編輯。
+
+請建立三個 subagent（子代理）分工，每個負責 4 頁。開始前先統一故事內容、角色造型和畫風，再分工製作。
+
+最後合併成一份 PPT，存入前面的【SEL】資料夾，檔名為「【SEL第一週繪本簡報】」。</pre>
+<p class="check">完成後看看：確認共 12 頁、角色與故事連貫；點選投影片上的文字，測試能否直接修改。</p>
+</section>
+<section id="s7"><h2>操作三：AI 助理｜從 Google Drive 取得研習素材</h2><p>先選好專案資料夾。這一步取得的素材會用於操作四、五和延伸示範。</p>
+<button type="button" data-copy="p7">複製這段指令</button><pre id="p7">請幫我下載這個 Google Drive 資料夾裡的研習素材：
+https://drive.google.com/drive/folders/1B7XGOsAgMnHDs9dcXMlUc6bNgDRKpiUH?usp=drive_link
+
+1. 在目前的專案資料夾裡，建立「【研習素材】」資料夾，把下載的檔案放進去；如果有壓縮檔，請解壓縮，並保留原始壓縮檔。
+2. 幫我整理一份「素材盤點表」，列出檔名、檔案類型、大小，以及一句話的內容摘要，存成 Excel。
+3. 不要修改或刪除原始素材；如果遇到同名檔案，請另外保留，不要直接覆蓋。
+4. 最後告訴我下載了哪些檔案，有沒有無法下載、解壓縮或讀取的檔案。無法讀取的內容請註明，不要猜測。</pre>
+<p class="check">完成後看看：對照素材盤點表與實際檔案，查看有沒有下載失敗或無法讀取的項目。</p>
+</section>
+<section id="s8"><h2>操作四：不同檔案的連結｜Excel＋Word 批次製作獎狀</h2><p>找到學生名單 Excel 和獎狀範本 Word，換成實際檔名。</p>
+<button type="button" data-copy="p8">複製這段指令</button><pre id="p8">請讀取資料夾中的「【學生名單】」Excel 和「【獎狀範本】」Word，依照名單製作獎狀，保留範本原本的版面和格式。
+
+1. 先檢查班級、座號、姓名、獎項是否能對應，列出缺少的資料和可能重複的名單。有問題的資料先不要自行補填或刪除。
+2. 用資料完整的前【3】位學生製作獎狀，存成 Word 和 PDF，讓我檢查。做到這裡先停下來，等我確認。
+3. 我確認後，再批次製作全部獎狀，存成 Word 和 PDF，放進「【獎狀成品】」資料夾。
+4. 最後告訴我完成幾張獎狀，並列出無法製作的名單與原因。</pre>
+<p class="check">完成後看看：先抽查三張的姓名、獎項和版面，再確認是否批次產出。</p>
+</section>
+<section id="s9"><h2>操作五：閱讀照片｜整理旅遊照片</h2><p>選取素材裡的旅遊照片資料夾，先看盤點與分類建議，再決定是否執行。</p>
+<button type="button" data-copy="p9">複製這段指令</button><pre id="p9">請幫我整理「【旅遊照片】」資料夾裡的照片。
+
+1. 先盤點照片，告訴我打算怎麼分類，以及有哪些需要注意的地方。先不要更動檔案，等我確認後再整理。
+2. 分類時，請參考照片的拍攝時間、GPS 位置、檔名和畫面內容。沒有拍攝資訊或無法確定地點的，不要自行猜測。
+3. 我確認後，只用「複製」的方式，把照片放進新的「【旅遊照片整理】」資料夾，保留所有原始檔案。
+4. 新資料夾內分成：
+01_交通、02_海邊、03_景點、04_美食、05_人物、06_夕陽、07_住宿、08_夜景、09_精選封面、10_需要確認。
+每張照片先選一個最適合的分類，適合當封面的可以另外複製一份到「09_精選封面」。
+5. 模糊、疑似重複、太暗或無法確定分類的照片，放進「10_需要確認」，不要刪除。
+6. 複製後的照片改名為「景點名稱＿日期＿序號＿描述」，保留原本的副檔名。無法確認的地點或日期，請標示「地點待確認」或「日期不明」。
+7. 最後做一份整理報告，告訴我原本有幾張、整理後有幾張、各資料夾的張數，以及哪些照片需要我確認。封面額外複製的張數請另外列出。
+
+請先回報盤點結果、整理方式和注意事項，等我確認後再執行複製與改名。</pre>
+<p class="check">完成後看看：查看原始照片仍在；抽查分類、日期、檔名與照片內容，另外核對封面的複製張數。</p>
+</section>
+<section id="s10"><h2>操作六：做網頁｜成語填空小遊戲</h2><p>先講解 Work 與 Codex 的差別，再以 Codex 示範製作與測試。玩法可依研習當天調整。</p>
+<button type="button" data-copy="p10">複製這段指令</button><pre id="p10">請在這個資料夾製作一個適合【國小四年級學生】玩的成語填空網頁遊戲。
+
+1. 開始時有啟動畫面，顯示遊戲說明和「開始遊戲」按鈕。
+2. 準備適合這個年級的四字成語題庫，每次隨機抽【10】題，同一回合不要重複。每題隨機隱藏一個字，讓學生從【4】個不同的候選字中選出正確答案，確保只有一個正確選項。
+3. 每題限時【15】秒，用一條會逐漸減少的「時間血條」顯示；另外用不同顏色的「答題進度條」，顯示目前完成幾題，兩者要標示清楚。
+4. 答對時顯示慶祝動畫，再自動進入下一題；答錯或時間到時，顯示正確答案，停留【2】秒後自動進入下一題。選完答案後，不要讓學生重複作答。
+5. 每題答對得【10】分，答錯或時間到得 0 分，滿分【100】分。結束時顯示分數、答對題數，以及「再玩一次」按鈕。
+6. 畫面使用繁體中文，字要清楚，按鈕要方便點選，電腦和手機都能玩。
+
+先用簡單的話告訴我，你打算怎麼設計畫面和遊戲流程，等我確認後再開始製作。
+完成後，請實際開啟，測試答對、答錯、時間到和重新開始是否正常，告訴我測試結果，以及怎麼開啟試玩。先在本機試玩，發布上網我們再另外討論。</pre>
+<p class="check">完成後看看：自己試答對、答錯、逾時及重新開始，核對分數與兩條進度顯示。</p>
+</section>
+<section id="s11"><h2>操作六補充｜360 環景教材生成器</h2><p><a href="supplements/360環景教材生成器.html" target="_blank">開啟 360 環景教材生成器（本機副本）</a></p><p>除了成語遊戲，也可以看看另一種教學網頁：輸入主題與參考資料，規劃 360 環景場景，加入知識點、思考題和場景切換。
+可以生成圖片、換成自己的 360 照片，調整標示點，預覽後匯出教材網站與專案檔。
+補充檔案：<a href="https://drive.google.com/file/d/1hwXBe7Zg2KYdAjO0cn5eBBt5n2cVQdBE/view?usp=drivesdk">https://drive.google.com/file/d/1hwXBe7Zg2KYdAjO0cn5eBBt5n2cVQdBE/view?usp=drivesdk</a>
+請先下載 HTML，再用瀏覽器開啟。生成功能需要自己的 OpenAI API Key，會使用 API 額度；共用電腦不要勾選記住金鑰。
+這是操作六的延伸範例，不必在研習中另做一個完整任務。</p>
+</section>
+<section id="s12"><h2>Computer Use｜讓 AI 操作電腦或瀏覽器</h2><p>適合需要看畫面、點按鈕、輸入內容的任務。先在外掛程式中確認 Computer Use 已啟用，依系統提示授權；macOS 可能需要螢幕錄製與輔助使用權限，操作 Chrome 則依介面連接瀏覽器擴充功能。
+這次使用素材中的「(computer use)複習考卷_地表的靜與動.pdf」，不再引用操作一沒有產生的紅毛城試題。
+參考：<a href="https://learn.chatgpt.com/docs/computer-use">https://learn.chatgpt.com/docs/computer-use</a></p>
+<button type="button" data-copy="p12">複製這段指令</button><pre id="p12">請使用 Computer Use，把「【(computer use)複習考卷_地表的靜與動.pdf】」中的選擇題做成 Google 表單測驗。
+
+1. 先讀取 PDF，列出能辨識的選擇題、選項和答案，讓我確認；沒有答案或看不清楚的地方請標示，不要猜。
+2. 等我確認題目、答案與每題配分後，用【Chrome】開啟 Google 表單，建立「【地表的靜與動複習測驗】」。
+3. 開啟測驗設定，逐題填入題目、選項、正確答案與我確認的配分。
+4. 完成後給我編輯網址，讓我自己預覽作答。
+
+需要登入時請停下來讓我操作，不要代填密碼；不要傳送、發布或分享給任何人。</pre>
+<p class="check">自己預覽作答，核對題數、選項、答案與總分。</p>
+</section>
+<section id="s13"><h2>MCP｜把外部工具接給 AI 使用</h2><p>可以把 MCP 想成 AI 連接外部工具的插頭。先看應用程式或外掛程式裡有沒有可直接連的服務；需要自訂 MCP 時，再按講師示範安裝。
+本次示範：Padlet 整理互動牆、Gemini Notebook 整理來源與產出教材、Netlify 分享網頁。
+帳號登入由自己完成；Token、API Key 和登入憑證不要貼在公開筆記、投影或 GitHub。</p>
+</section>
+<section id="s14"><h2>Padlet MCP｜連線與規劃互動牆</h2><p>先在應用程式或外掛程式裡找到 Padlet，完成帳號連接。若講師採用自訂 MCP，依專案當天的安裝說明：<a href="https://github.com/ab0308-del/padlet-mcp">https://github.com/ab0308-del/padlet-mcp</a>
+先貼：「請確認目前連接的 Padlet 帳號，只讀取，不要建立或修改任何內容。」確認帳號後再試下方範例。</p>
+<button type="button" data-copy="p14">複製這段指令</button><pre id="p14">請幫我規劃一面「【AI Agent 教師研習】」Padlet，分成：
+課前期待、今天學到什麼、可以應用在哪裡、仍然想問的問題。
+
+每區放 2 個簡短引導問題。先把內容給我看，等我確認後再建立。
+如果有多個帳號或工作空間，請先讓我選擇。</pre>
+<p class="check">打開新看板，檢查欄位、引導問題和分享權限。不要在本研習範例牆上試刪除。</p>
+</section>
+<section id="s15"><h2>Gemini Notebook MCP｜先讀 MD，再協助連接</h2><p>教材名稱使用 Gemini Notebook；你提供的原始說明檔仍叫「01-連接-NotebookLM.md」。保留原檔名，方便老師找到。
+原檔寫給 Claude Code／opencode，這次改為請 Codex 閱讀後依目前環境調整。套件與執行指令仍可能保留舊名稱，不能把指令中的 notebooklm 全部改成 Gemini Notebook。
+這是社群 MCP 工具。請用教學練習帳號，先理解並確認安裝範圍，再登入。
+專案說明：<a href="https://github.com/jacob-bd/gemini-notebook-mcp-cli">https://github.com/jacob-bd/gemini-notebook-mcp-cli</a></p>
+<button type="button" data-copy="p15">複製這段指令</button><pre id="p15">請先閱讀我附上的「01-連接-NotebookLM.md」，協助我在目前的 Codex 連接 Gemini Notebook MCP。
+
+1. 先檢查我的作業系統、需要的工具，以及是否已經安裝或連接過，告訴我打算怎麼做，等我確認再安裝。
+2. 這份檔案原本寫給 Claude Code／opencode，請依目前 Codex 的安裝方式調整，並查閱工具專案的最新說明，不要照抄不適用的指令。
+3. 需要 Google 登入時，請停下來讓我自己操作，不要顯示或複製我的登入憑證。
+4. 完成後只列出我的筆記本，確認 MCP 能讀取；不要建立或刪除測試筆記本，也不要修改其他 MCP 設定。
+5. 如果失敗，先說明原因和修正方法，不要直接清除原有設定或登入資料。</pre>
+<p class="check">能在目前的 Codex 對話透過 MCP 列出筆記本，才算連接驗證完成。只裝好套件不代表能使用。</p>
+</section>
+<section id="s16"><h2>Gemini Notebook MCP｜連接步驟參考</h2><p>老師先貼前一段，讓 AI 依環境引導即可，不必硬記指令。講師參考順序：
+1. 安裝：uv tool install notebooklm-mcp-cli
+2. 登入：nlm login
+3. 連接 Codex：nlm setup add codex
+4. 完全重開應用程式，再用 MCP 列出筆記本。
+以上依 2026/10/22 工具專案說明整理，研習當天再核對。這次只整理教材，並未在學員電腦安裝或驗證。</p>
+</section>
+<section id="s17"><h2>Gemini Notebook MCP｜把 SEL 資源變成教學素材</h2><p>延續操作一，使用「網路資源」裡經過確認的來源。</p>
+<button type="button" data-copy="p17">複製這段指令</button><pre id="p17">請用 Gemini Notebook MCP，協助我整理【SEL】課程的資源。
+
+1. 先讀取「網路資源」文件，把打算加入的來源清單給我看，等我確認。
+2. 我確認後，再建立「【四年級 SEL 課程】」筆記本，加入確認過的來源。
+3. 請根據這些來源回答：「【四年級學生學習情緒覺察時，最需要理解的三件事是什麼？】」
+4. 幫我產生一段適合學生聽的中文語音摘要，完成後告訴我在哪裡收聽；若無法產生，請說明原因。
+
+不要修改或刪除其他筆記本。</pre>
+<p class="check">打開筆記本核對來源，再實際聽語音內容是否適合學生。</p>
+</section>
+<section id="s18"><h2>Netlify｜把操作六的遊戲分享出去</h2><p>先完成本機試玩，再登入自己的 Netlify 帳號：<a href="https://app.netlify.com/">https://app.netlify.com/</a>
+本單元直接延續成語填空遊戲，不用重新做另一個遊戲。站名是否可用、方案與費用，以帳號當天顯示為準。
+Netlify 官方連接說明：<a href="https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview/">https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview/</a></p>
+<button type="button" data-copy="p18">複製這段指令</button><pre id="p18">請協助我連接 Netlify MCP。先確認目前是否已連接；如果需要設定，請依 Netlify 官方最新說明引導。
+需要登入授權時讓我自己操作。完成後只確認帳號和網站清單，不要部署，也不要顯示 Token。</pre>
+</section>
+<section id="s19"><h2>Netlify｜先給我預覽</h2><p>確認連接的帳號正確後，再貼這段。預覽網址也可能讓取得連結的人讀到，練習版不要放學生個資。</p>
+<button type="button" data-copy="p19">複製這段指令</button><pre id="p19">請用 Netlify MCP，幫我把操作六完成的「【成語填空小遊戲】」建立預覽部署。
+
+先確認要上傳的資料夾、檔案與 Netlify 帳號，讓我檢查。
+我確認後才上傳，只建立預覽，先不要更新正式網站。
+完成後給我預覽網址，實際開啟測試，並告訴我答題、計時、分數與重新開始是否正常。</pre>
+</section>
+<section id="s20"><h2>Netlify｜確認後才正式上架</h2><p>自己用電腦與手機試玩預覽版，通過後才貼這段。</p>
+<button type="button" data-copy="p20">複製這段指令</button><pre id="p20">我已經確認預覽版可以正常使用。
+請先提供幾個【成語遊戲】的 netlify.app 網站名稱供我選擇，說明是否可用。
+等我選定後，再把剛剛確認過的版本正式部署，回報正式網址，並實際開啟檢查。</pre>
+</section>
+<section id="s21"><h2>我最常對 Agent 說的話</h2><p>「先告訴我你要怎麼做，我確認後你才開始動工。」
+「完成的時候，也教我怎麼做，因為我想了解這些步驟。」
+「先保留原始檔，另外做一份新版讓我看。」
+「我已經試過這個流程了，請幫我整理成可以重複使用的 Skill。」
+「請把目前做到哪裡、重要檔案和下一步寫成交接紀錄，方便下次接著做。」
+子代理適合分工不同頁面或資料；多人同時操作同一個 App 容易互相干擾，請分開安排。</p>
+</section>
+<section id="s22"><h2>加練範例｜口述填入 Word 表單</h2><p>原筆記的加練保留在這裡，有時間再做。先口述活動名稱、日期、地點、對象、人數與活動內容。</p>
+<button type="button" data-copy="p22">複製這段指令</button><pre id="p22">請把我剛剛口述的內容整理好，填入資料夾中的「【研習活動成果紀錄表】」Word。
+先用表格列出每個欄位建議填入的文字，給我確認。
+我沒提到的資訊請留空並標示「待補」，不要自行編造。
+等我確認後另存新檔，保留原始範本。</pre>
+</section>
+<section id="s23"><h2>加練範例｜整理公務資料夾</h2><p>先看分類與改名建議，確認後只整理副本。</p>
+<button type="button" data-copy="p23">複製這段指令</button><pre id="p23">請整理「【公務處理】」資料夾。
+先閱讀文件，用表格列出原檔名、內容摘要、建議新檔名和版本判斷，再提出分類方式。
+新檔名用「日期＿主旨＿學校」，不確定的資訊請標示待確認。
+等我確認後，只用複製的方式整理到「公務處理_整理後」，原檔不要動。
+疑似重複或過期的放進「需要確認」，不要刪除。
+最後給我新舊檔名對照表和需要確認的清單。</pre>
+</section>
+<section id="s24"><h2>加練範例｜學力檢測命題</h2><p>原筆記提供的試題來源：<a href="https://saaassessment.ntcu.edu.tw/ExamReleases">https://saaassessment.ntcu.edu.tw/ExamReleases</a></p>
+<button type="button" data-copy="p24">複製這段指令</button><pre id="p24">請搜尋近五年【國小五年級數學】學力檢測的公開題目與相關資料。
+整理可合法取得的題目、年份與來源，分析題型與命題方向。
+再參考命題方式重新設計一份評量卷，不直接複製原題，附答案與解析，存成可列印的 Word，放入「output」資料夾。
+找不到的年份或資料請說明，不要編造。</pre>
+</section>
+<section id="s25"><h2>延伸閱讀</h2><p>《數位時代》｜講師提供的 ChatGPT Work、Chat 與 Codex 閱讀 PDF，已放入 Padlet「延伸閱讀」。
+【AI科普淺談】OpenAI 五級分級，看懂我們正走到哪一步？／野人牧牧，方格子，2025 年 4 月。
+<a href="https://vocus.cc/article/67ff5cddfd89780001998c95">https://vocus.cc/article/67ff5cddfd89780001998c95</a>
+這篇可用來討論「回答、推理、代理執行」的差別，文中產品與能力描述屬當時觀點，現況請核對官方資料。</p>
+</section>
+<script>document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='已複製，可以貼給 AI';}catch(e){const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();const ok=document.execCommand('copy');a.remove();b.textContent=ok?'已複製，可以貼給 AI':'請選取下方文字複製';}});</script></html>

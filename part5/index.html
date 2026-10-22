@@ -93,8 +93,8 @@
     <div class="deco-line"></div>
     <ol class="steps">
       <li><span class="num">1</span><div class="tx">安裝 <b>Google 雲端硬碟桌面版</b>，把專案資料夾放在雲端硬碟中。</div></li>
-      <li><span class="num">2</span><div class="tx">兩台電腦都開啟同一個資料夾，就能延續同一個專案。</div></li>
-      <li><span class="num">3</span><div class="tx">代價：檔案需要同步，<b>電腦效能會變慢</b>；大量檔案時更明顯。</div></li>
+      <li><span class="num">2</span><div class="tx">等檔案同步完成，在另一台開啟資料夾並讀取交接紀錄；工具與登入需各自設定。</div></li>
+      <li><span class="num">3</span><div class="tx">代價：檔案需要同步，<b>同步期間可能增加負載</b>；大量檔案時更明顯。</div></li>
     </ol>
     <div class="note">避免兩台電腦同時修改同一個專案，等同步完成再換另一台。</div>
   </div>
@@ -109,7 +109,7 @@
       <div class="box"><h4>📈 檔案會一直增加</h4><p>每次試做、副本、截圖、暫存檔都會留下來，累積起來造成儲存空間壓力。</p></div>
       <div class="box"><h4>🧹 定期整理</h4><p>請 Agent 列出「可刪除候選清單」放進「待刪除」資料夾，由你確認後再刪。</p></div>
     </div>
-    <span class="code">請盤點這個專案資料夾，列出暫存檔、重複檔與舊版本，說明每個檔案能不能刪除。先移到「待刪除」資料夾，不要直接刪除。</span>
+    <span class="code">請盤點這個專案資料夾，列出暫存檔、重複檔與舊版本，說明每個檔案能不能刪除。先給我候選清單，不要移動或刪除，等我確認再處理。</span>
   </div>
 </section>
 
@@ -119,24 +119,24 @@
     <h2 class="h-title">不要貪心一次開太多 Agent</h2>
     <div class="deco-line"></div>
     <ol class="steps">
-      <li><span class="num">1</span><div class="tx">同時開一個、兩個、三個、四個任務……<b>視窗關掉後它仍會繼續工作</b>。</div></li>
+      <li><span class="num">1</span><div class="tx">同時開一個、兩個、三個、四個任務……<b>關閉視窗不一定代表任務已停止，請檢查任務狀態</b>。</div></li>
       <li><span class="num">2</span><div class="tx">每個任務都會消耗記憶體，太多就可能<b>過載當機</b>。</div></li>
       <li><span class="num">3</span><div class="tx">按 <code>Ctrl＋Shift＋Esc</code> 開啟<b>工作管理員</b>，查看記憶體使用量。</div></li>
     </ol>
-    <div class="note">記憶體使用率長時間超過 80%，就先等手上的任務完成，再開新的。</div>
+    <div class="note">電腦明顯變慢時，先檢查 CPU 與記憶體用量，等手上的任務完成再開新的。</div>
   </div>
 </section>
 
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">REVIEW</p>
-    <h2 class="h-title">五堂課回顧</h2>
+    <h2 class="h-title">五個單元回顧</h2>
     <div class="deco-line"></div>
     <ol class="steps">
       <li><span class="num">1</span><div class="tx"><b>Part 1</b>：環境設置，選對 Chat、Work、Codex，看懂模型與剩餘用量。</div></li>
-      <li><span class="num">2</span><div class="tx"><b>Part 2</b>：Work 六個任務，從口述需求到驗證結果。</div></li>
-      <li><span class="num">3</span><div class="tx"><b>Part 3</b>：Computer Use 操作電腦，Work 與 Codex 實戰示範。</div></li>
-      <li><span class="num">4</span><div class="tx"><b>Part 4</b>：外掛程式與 MCP，連接 Padlet、NotebookLM、Netlify。</div></li>
+      <li><span class="num">2</span><div class="tx"><b>Part 2</b>：六個研習操作，從課程爬文、生圖到成語遊戲。</div></li>
+      <li><span class="num">3</span><div class="tx"><b>Part 3</b>：Computer Use 把 PDF 題目做成表單，實際預覽驗收。</div></li>
+      <li><span class="num">4</span><div class="tx"><b>Part 4</b>：外掛程式與 MCP，連接 Padlet、Gemini Notebook、Netlify。</div></li>
       <li><span class="num">5</span><div class="tx"><b>Part 5</b>：想法、流程與安全，讓 Agent 成為長期的工作夥伴。</div></li>
     </ol>
   </div>
@@ -164,10 +164,10 @@ const slides=[...document.querySelectorAll('.slide')];
 const bar=document.getElementById('bar'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
 let cur=0;
 function show(n){cur=Math.max(0,Math.min(n,slides.length-1));
-  slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.classList.toggle('prev',i<cur);});
-  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;
+  slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.setAttribute('aria-hidden',i===cur?'false':'true');s.classList.toggle('prev',i<cur);});
+  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;history.replaceState(null,'','#'+(cur+1));
   prevBtn.disabled=cur===0;nextBtn.disabled=cur===slides.length-1;}
-show(0);
+show(Number(location.hash.slice(1))-1||0);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(cur+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(cur-1);}});
 prevBtn.addEventListener('click',()=>show(cur-1));
 nextBtn.addEventListener('click',()=>show(cur+1));

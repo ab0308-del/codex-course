@@ -66,3 +66,9 @@ code,.code{font-family:'JetBrains Mono',monospace}
 .stack-shots .wide-shot img{max-height:12vh}
 .stack-shots .main-shot img{max-height:45vh}
 @media(max-width:760px){.slide{padding:32px 22px 88px}.h-title{font-size:26px}.grid2,.grid3,.shot-grid{grid-template-columns:1fr}.sec-num{font-size:70px}.card{padding:30px 24px}.shot-grid .guide-shot img{max-height:34vh}.guide-shot figcaption{font-size:12px}.nav-hint{display:none}.slide-nav button{padding:8px 14px}}
+
+/* 整理版：可讀性與手機預覽 */
+.code{word-break:normal;overflow-wrap:anywhere;font-family:system-ui,sans-serif;font-size:17px;line-height:1.65}
+.wrap{padding-bottom:8px}.wrap .sub{margin-top:14px;font-size:19px;line-height:1.7}
+@media(max-width:760px){.code{font-size:16px}.wrap .sub{font-size:17px}.slide{padding-top:50px}.wrap{max-height:calc(100dvh - 140px)}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}}

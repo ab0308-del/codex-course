@@ -40,7 +40,7 @@
   <div class="wrap">
     <figure class="guide-shot full-shot">
       <a href="images/chat-work-codex-roles.png" target="_blank"><img src="images/chat-work-codex-roles.png" alt="Chat、Work 與 Codex 的工作分工比較圖"></a>
-      <figcaption>先判斷現在需要的是討論、交付成果，還是進入專案施工。</figcaption>
+      <figcaption>Work 與 Codex 能力有重疊，介面與技術細節呈現不同；以研習當天為準。</figcaption>
     </figure>
   </div>
 </section>
@@ -53,7 +53,7 @@
     <ol class="steps">
       <li><span class="num">1</span><div class="tx">到 <a href="https://chatgpt.com/zh-Hant/download/?utm_source=google&amp;utm_medium=paid_search&amp;utm_campaign=GOOG_C_SEM_GBR_Core_CHT_BAU_ACQ_PER_MIX_ALL_APAC_AU_EN_021425&amp;c_id=22239765488&amp;c_agid=176457983033&amp;c_crid=790574195702&amp;c_kwid=kwd-350567194487&amp;c_ims=&amp;c_pms=9071791&amp;c_nw=g&amp;c_dvc=c&amp;gad_source=1&amp;gad_campaignid=22239765488&amp;gbraid=0AAAAA-I0E5fK0s0aEL0Xk7DuOpNk20ozf&amp;gclid=CjwKCAjwyOzSBhBTEiwAmxvJ-qvBQ9vXFTyncoGYKgB4YXILyBUnPpXNg4qQpGhBZ-QBiLRm71dwvhoCGNcQAvD_BwE" target="_blank" rel="noopener"><b>ChatGPT 官方下載頁</b></a>安裝 ChatGPT 應用程式，登入自己的帳號。<span class="pill">方案、模型與額度會更新，以當天帳號畫面為準</span></div></li>
       <li><span class="num">2</span><div class="tx">在「文件」建立<b>獨立練習資料夾</b>，只放假資料與可備份的檔案。</div></li>
-      <li><span class="num">3</span><div class="tx">一般教師文件先選 <b>Work</b>；需要本機資料夾、終端機、GitHub 或 MCP 時，再切換到 <b>Codex</b>。</div></li>
+      <li><span class="num">3</span><div class="tx">教師文件先以 <b>Work</b> 示範；操作六用 <b>Codex</b> 查看網頁修改與測試。兩者能力有重疊，本機資料夾取決於工具與授權。</div></li>
     </ol>
   </div>
 </section>
@@ -182,7 +182,7 @@
     <p style="font-family:'Playfair Display';font-size:60px;margin-bottom:10px">謝謝</p>
     <div class="deco-line" style="margin:0 auto 22px;background:var(--accent-4)"></div>
     <p style="font-size:20px;opacity:.92">環境就緒，會交辦，也會驗收</p>
-    <p style="font-size:15px;opacity:.78;margin-top:12px">下一集 Part 2：用 ChatGPT Work 處理教師文件</p>
+    <p style="font-size:15px;opacity:.78;margin-top:12px">下一段 Part 2：六個研習操作</p>
   </div>
 </section>
 
@@ -199,10 +199,10 @@ const slides=[...document.querySelectorAll('.slide')];
 const bar=document.getElementById('bar'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
 let cur=0;
 function show(n){cur=Math.max(0,Math.min(n,slides.length-1));
-  slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.classList.toggle('prev',i<cur);});
-  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;
+  slides.forEach((s,i)=>{s.classList.toggle('active',i===cur);s.setAttribute('aria-hidden',i===cur?'false':'true');s.classList.toggle('prev',i<cur);});
+  bar.style.width=((cur+1)/slides.length*100)+'%';counter.textContent=(cur+1)+' / '+slides.length;history.replaceState(null,'','#'+(cur+1));
   prevBtn.disabled=cur===0;nextBtn.disabled=cur===slides.length-1;}
-show(0);
+show(Number(location.hash.slice(1))-1||0);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();show(cur+1);}if(e.key==='ArrowLeft'){e.preventDefault();show(cur-1);}});
 prevBtn.addEventListener('click',()=>show(cur-1));
 nextBtn.addEventListener('click',()=>show(cur+1));
