@@ -38,6 +38,9 @@ body{font-family:'Noto Sans TC',sans-serif;background:#000;overflow:hidden;heigh
 .num{width:34px;height:34px;background:var(--accent-1);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:15px}
 .steps .tx{font-size:18px;line-height:1.55;color:var(--text-primary);padding-top:3px}
 .steps .tx b{color:var(--accent-1)}
+.prep-list{gap:20px}
+.prep-list .num{width:40px;height:40px;font-size:18px}
+.prep-list .tx{font-size:24px;padding-top:1px}
 code,.code{font-family:'JetBrains Mono',monospace}
 .code{display:block;background:#173a2c;color:#d8f3e3;padding:12px 16px;border-radius:10px;font-size:15px;margin-top:8px;word-break:break-all;white-space:pre-wrap;line-height:1.5}
 .code .c{color:#8fd9b6}
@@ -71,4 +74,5 @@ code,.code{font-family:'JetBrains Mono',monospace}
 .code{word-break:normal;overflow-wrap:anywhere;font-family:system-ui,sans-serif;font-size:17px;line-height:1.65}
 .wrap{padding-bottom:8px}.wrap .sub{margin-top:14px;font-size:19px;line-height:1.7}
 @media(max-width:760px){.code{font-size:16px}.wrap .sub{font-size:17px}.slide{padding-top:50px}.wrap{max-height:calc(100dvh - 140px)}}
+@media(max-width:760px){.prep-list{gap:16px}.prep-list .tx{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.slide{transition:none}}
