@@ -85,32 +85,8 @@
 每區放 2 個簡短引導問題。先預覽內容，等我確認後再建立。</span>
   </div>
 </section>
-<section class="slide">
-  <div class="wrap">
-    <p class="h-eyebrow">PADLET · TASK ②</p>
-    <h2 class="h-title">讀取全班回應，先摘要、不回寫</h2>
-    <div class="deco-line"></div>
-    <div class="grid2">
-      <div class="box"><h4>📊 分類統整</h4><p>將回應整理為「已理解、想應用、仍有疑問」，統計數量與常見觀點。</p></div>
-      <div class="box"><h4>🔎 保留例外</h4><p>不確定、離題、可能涉及個資的內容另外列出，不替學員猜測。</p></div>
-    </div>
-    <div class="note">提示詞：「先在對話中提供摘要，不要直接貼回 Padlet。」讀取與外部寫入是兩個不同授權階段。</div>
-  </div>
-</section>
-<section class="slide">
-  <div class="wrap">
-    <p class="h-eyebrow">PADLET · TASK ③</p>
-    <h2 class="h-title">個別回饋：預覽、確認、再留言</h2>
-    <div class="deco-line"></div>
-    <ol class="steps">
-      <li><span class="num">1</span><div class="tx">請 Codex 為每則回應<b>草擬</b>一句具體、友善、能引導思考的回饋。</div></li>
-      <li><span class="num">2</span><div class="tx">講師逐則檢查語氣、正確性與是否洩漏個資。</div></li>
-      <li><span class="num">3</span><div class="tx">只把確認過的回饋留言到對應貼文；無法配對就停止詢問。</div></li>
-      <li><span class="num">4</span><div class="tx">可延伸：答對加 ❤️、迷思用蘇格拉底式問題回應，但先確認 Padlet 已開啟互動。</div></li>
-      <li><span class="num">5</span><div class="tx">最後產出研習摘要：主要收穫、待解問題、後續行動與人工處理清單。</div></li>
-    </ol>
-  </div>
-</section>
+
+
 <section class="slide bg ov" style="background:url('images/sec.png') center/cover">
   <div class="inner">
     <p class="eyebrow">MCP 2</p>
@@ -127,9 +103,7 @@
 3. 需要 Google 登入時，請停下來讓我自己操作，不要顯示或複製我的登入憑證。
 4. 完成後只列出我的筆記本，確認 MCP 能讀取；不要建立或刪除測試筆記本，也不要修改其他 MCP 設定。
 5. 如果失敗，先說明原因和修正方法，不要直接清除原有設定或登入資料。</div><div class="note"><a href="https://docs.google.com/document/d/1jzYLz-a3kMPW-TNwBAWWw-22x5_Wmz9sQcmVhnAe8pc/edit?usp=drivesdk" target="_blank" rel="noopener">完整步驟在操作筆記</a></div></div></section>
-<section class="slide"><div class="wrap"><p class="h-eyebrow">講師參考</p><h2 class="h-title">產品改名，工具指令仍保留舊名稱</h2><div class="deco-line"></div><div class="code">uv tool install notebooklm-mcp-cli
-nlm login
-nlm setup add codex</div><p class="sub">登入由自己完成；完全重開應用程式後，只用 MCP 列出筆記本驗證。</p><p class="sub">套件名稱與執行檔仍保留 notebooklm，不要直接替換文字。</p><p class="sub"><a href="https://github.com/jacob-bd/gemini-notebook-mcp-cli" target="_blank" rel="noopener">工具專案最新說明</a></p></div></section>
+
 <section class="slide"><div class="wrap"><p class="h-eyebrow">Gemini Notebook 實作</p><h2 class="h-title">延續 SEL 課程，整理來源與語音摘要</h2><div class="deco-line"></div><div class="code">請用 Gemini Notebook MCP，協助我整理【SEL】課程的資源。
 
 1. 先讀取「網路資源」文件，把打算加入的來源清單給我看，等我確認。
@@ -146,15 +120,28 @@ nlm setup add codex</div><p class="sub">登入由自己完成；完全重開應�
     <p style="font-size:18px;opacity:.9">從一句需求開始，完成可玩、可驗收、可分享的網頁遊戲</p>
   </div>
 </section>
+<section class="slide"><div class="wrap"><p class="h-eyebrow">Codex 進階</p><h2 class="h-title">Codex 進階示範：做網頁｜成語填空小遊戲</h2><div class="deco-line"></div><p class="sub">先講解 Work 與 Codex 的差別，再以 Codex 示範製作與測試。玩法可依研習當天調整。</p><div class="note">完成後看看：自己試答對、答錯、逾時及重新開始，核對分數與兩條進度顯示。</div></div></section>
+<section class="slide"><div class="wrap"><p class="h-eyebrow">Codex 進階</p><h2 class="h-title">Codex 進階示範：做網頁｜直接貼上（1/2）</h2><div class="deco-line"></div><div class="code">在這個資料夾製作一個適合【國小四年級學生】玩的成語填空網頁遊戲。
+
+1. 開始時有啟動畫面，顯示遊戲說明和「開始遊戲」按鈕。
+2. 準備適合這個年級的四字成語題庫，每次隨機抽【10】題，同一回合不要重複。每題隨機隱藏一個字，讓學生從【4】個不同的候選字中選出正確答案，確保只有一個正確選項。
+3. 每題限時【15】秒，用一條會逐漸減少的「時間血條」顯示；另外用不同顏色的「答題進度條」，顯示目前完成幾題，兩者要標示清楚。
+4. 答對時顯示慶祝動畫，再自動進入下一題；答錯或時間到時，顯示正確答案，停留【2】秒後自動進入下一題。選完答案後，不要讓學生重複作答。</div><div class="note"><a href="https://docs.google.com/document/d/1jzYLz-a3kMPW-TNwBAWWw-22x5_Wmz9sQcmVhnAe8pc/edit?usp=drivesdk" target="_blank" rel="noopener">完整提示詞請從新版操作筆記一次複製</a></div></div></section>
+<section class="slide"><div class="wrap"><p class="h-eyebrow">Codex 進階</p><h2 class="h-title">Codex 進階示範：做網頁｜直接貼上（2/2）</h2><div class="deco-line"></div><div class="code">5. 每題答對得【10】分，答錯或時間到得 0 分，滿分【100】分。結束時顯示分數、答對題數，以及「再玩一次」按鈕。
+6. 畫面使用繁體中文，字要清楚，按鈕要方便點選，電腦和手機都能玩。
+
+先用簡單的話告訴我，你打算怎麼設計畫面和遊戲流程，等我確認後再開始製作。
+完成後，請實際開啟，測試答對、答錯、時間到和重新開始是否正常，告訴我測試結果，以及怎麼開啟試玩。先在本機試玩，發布上網我們再另外討論。</div><div class="note"><a href="https://docs.google.com/document/d/1jzYLz-a3kMPW-TNwBAWWw-22x5_Wmz9sQcmVhnAe8pc/edit?usp=drivesdk" target="_blank" rel="noopener">完整提示詞請從新版操作筆記一次複製</a></div></div></section>
+<section class="slide"><div class="wrap"><p class="h-eyebrow">Codex 進階・補充資料</p><h2 class="h-title">360 環景教材生成器</h2><div class="deco-line"></div><p class="sub">另一種教學網頁範例：輸入教材主題與參考資料，規劃環景場景、知識點及思考題。</p><p class="sub">可生成圖片、加入自己的 360 照片，設定標示點，預覽後匯出教材網站與專案檔。</p><div class="repo"><a href="https://drive.google.com/file/d/1hwXBe7Zg2KYdAjO0cn5eBBt5n2cVQdBE/view" target="_blank" rel="noopener">開啟補充範例：360 環景教材生成器</a></div><div class="note">這是生成工具，需要自己的 OpenAI API Key；呼叫 API 可能計費。共用電腦不要勾選記住金鑰。現場先看範例，是否生成由老師決定。</div></div></section>
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">NETLIFY</p>
-    <h2 class="h-title">每位學員申請自己的 Netlify 帳號</h2>
+    <h2 class="h-title">進階示範：登入自己的 Netlify 帳號</h2>
     <div class="deco-line"></div>
     <ol class="steps">
       <li><span class="num">1</span><div class="tx">開啟 <a href="https://app.netlify.com/" target="_blank" rel="noopener"><b>app.netlify.com</b></a>，完成註冊與登入。</div></li>
       <li><span class="num">2</span><div class="tx">確認能看到自己的 Team 與 Projects 畫面；後續網站都放在自己的帳號。</div></li>
-      <li><span class="num">3</span><div class="tx">Codex 也可能顯示其他部署選項；本堂課統一使用 <b>Netlify MCP</b>。</div></li>
+      <li><span class="num">3</span><div class="tx">若要跟做，可在確認帳號後依學員筆記連接 <b>Netlify MCP</b>。</div></li>
     </ol>
   </div>
 </section>
@@ -171,7 +158,7 @@ nlm setup add codex</div><p class="sub">登入由自己完成；完全重開應�
     </figure>
   </div>
 </section>
-<section class="slide"><div class="wrap"><p class="h-eyebrow">Netlify 預覽</p><h2 class="h-title">成語遊戲｜先給我預覽</h2><div class="deco-line"></div><div class="code">請用 Netlify MCP，幫我把操作六完成的「【成語填空小遊戲】」建立預覽部署。
+<section class="slide"><div class="wrap"><p class="h-eyebrow">Netlify 預覽</p><h2 class="h-title">成語遊戲｜先給我預覽</h2><div class="deco-line"></div><div class="code">請用 Netlify MCP，幫我把進階示範完成的「【成語填空小遊戲】」建立預覽部署。
 
 先確認要上傳的資料夾、檔案與 Netlify 帳號，讓我檢查。
 我確認後才上傳，只建立預覽，先不要更新正式網站。
@@ -179,19 +166,7 @@ nlm setup add codex</div><p class="sub">登入由自己完成；完全重開應�
 <section class="slide"><div class="wrap"><p class="h-eyebrow">Netlify 發布</p><h2 class="h-title">預覽確認後，再正式上架</h2><div class="deco-line"></div><div class="code">我已經確認預覽版可以正常使用。
 請先提供幾個【成語遊戲】的 netlify.app 網站名稱供我選擇，說明是否可用。
 等我選定後，再把剛剛確認過的版本正式部署，回報正式網址，並實際開啟檢查。</div><p class="sub">請自己用電腦與手機玩完一局，再確認正式發布。</p></div></section>
-<section class="slide">
-  <div class="wrap">
-    <p class="h-eyebrow">UPDATE</p>
-    <h2 class="h-title">網站上架不是結束：先修改，再重新部署</h2>
-    <div class="deco-line"></div>
-    <ol class="steps">
-      <li><span class="num">1</span><div class="tx">一次只提出一組清楚修改，例如加入最高分、改成 45 秒或更換主題。</div></li>
-      <li><span class="num">2</span><div class="tx">在本機重玩、建立新預覽、開啟預覽網址驗收。</div></li>
-      <li><span class="num">3</span><div class="tx">確認新功能正常且舊功能沒壞，再更新正式網站。</div></li>
-    </ol>
-    <div class="note">固定節奏：修改 → 本機驗收 → 預覽部署 → 線上驗收 → 正式部署。</div>
-  </div>
-</section>
+
 <section class="slide">
   <div class="wrap">
     <p class="h-eyebrow">AGENT · SKILL</p>
@@ -238,7 +213,7 @@ nlm setup add codex</div><p class="sub">登入由自己完成；完全重開應�
 </section>
 </div>
 <div class="progress-bar" id="bar"></div>
-<div class="slide-counter" id="counter">1 / 25</div>
+<div class="slide-counter" id="counter"> 1 / 25</div>
 <div class="nav-hint">使用鍵盤 ← → 或下方按鈕換頁</div>
 <nav class="slide-nav" aria-label="投影片換頁">
   <button id="prevBtn" type="button">← 上一頁</button>
